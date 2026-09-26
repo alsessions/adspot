@@ -1,0 +1,14 @@
+{% extends '_layouts/_page.twig' %}
+
+{% block title %}{{ entry.title }} | AdSpot{% endblock %}
+{% block description %}Contact AdSpot about billboard advertising across New York State.{% endblock %}
+
+{% block content %}
+    {% include '_partials/_entry-content.twig' with { entry: entry } only %}
+
+    <section class="mx-auto max-w-7xl px-6 pb-16 lg:px-10 lg:pb-24">
+        <div class="max-w-3xl">
+            {{ craft.formie.renderForm('contactForm') }}
+        </div>
+    </section>
+{% endblock %}

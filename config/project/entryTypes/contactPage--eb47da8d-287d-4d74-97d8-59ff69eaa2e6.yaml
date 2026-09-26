@@ -1,0 +1,91 @@
+allowLineBreaksInTitles: false
+color: null
+description: null
+fieldLayouts:
+  0c69f09b-4bdc-4fb6-9118-6ccbefbd65bd:
+    cardThumbAlignment: end
+    cardView:
+      - 'layoutElement:6258982f-e926-4342-860d-7b4e4ccf8ab4'
+      - 'layoutElement:9e747d9f-8c23-47e9-9a5f-b3a7b2acff5a'
+    tabs:
+      -
+        elementCondition: null
+        elements:
+          -
+            autocapitalize: true
+            autocomplete: false
+            autocorrect: true
+            class: null
+            dateAdded: '2026-09-26T22:06:01+00:00'
+            disabled: false
+            elementCondition: null
+            id: null
+            inputType: null
+            instructions: null
+            label: null
+            max: null
+            min: null
+            name: null
+            orientation: null
+            placeholder: null
+            readonly: false
+            required: true
+            size: null
+            step: null
+            tip: null
+            title: null
+            type: craft\fieldlayoutelements\entries\EntryTitleField
+            uid: c4122a99-3414-4dbb-95fd-7a0945eaac85
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            dateAdded: '2026-09-26T23:05:10+00:00'
+            editCondition: null
+            elementCondition: null
+            elementEditCondition: null
+            fieldUid: 642b551f-79c0-4ce6-afac-2db5a3f2761a # Page Image
+            handle: null
+            instructions: null
+            label: null
+            oldFieldUid: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 9e747d9f-8c23-47e9-9a5f-b3a7b2acff5a
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            dateAdded: '2026-09-26T22:08:22+00:00'
+            editCondition: null
+            elementCondition: null
+            elementEditCondition: null
+            fieldUid: b0f0711a-19da-4978-aa0d-b35e95cc0975 # Body Text
+            handle: null
+            instructions: null
+            label: null
+            oldFieldUid: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 6258982f-e926-4342-860d-7b4e4ccf8ab4
+            userCondition: null
+            warning: null
+            width: 100
+        name: Content
+        uid: 4df45968-b417-45fb-802f-9e6155e94e02
+        userCondition: null
+    thumbFieldKey: null
+handle: contactPage
+hasTitleField: true
+icon: null
+name: 'Contact Page'
+showSlugField: true
+showStatusField: true
+slugTranslationKeyFormat: null
+slugTranslationMethod: site
+titleFormat: null
+titleTranslationKeyFormat: null
+titleTranslationMethod: site
+uiLabelFormat: '{title}'

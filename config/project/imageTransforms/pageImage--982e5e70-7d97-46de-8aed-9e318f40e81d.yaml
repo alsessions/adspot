@@ -1,0 +1,11 @@
+fill: null
+format: null
+handle: pageImage
+height: 675
+interlace: none
+mode: crop
+name: 'Page Image'
+position: center-center
+quality: 82
+upscale: false
+width: 1200

@@ -1,0 +1,21 @@
+{
+  "name": "adspot",
+  "version": "1.0.0",
+  "scripts": {
+    "dev": "tailwindcss -i ./src/css/app.css -o ./web/css/app.css --watch",
+    "build": "tailwindcss -i ./src/css/app.css -o ./web/css/app.css --minify"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/alsessions/adspot.git"
+  },
+  "bugs": {
+    "url": "https://github.com/alsessions/adspot/issues"
+  },
+  "homepage": "https://github.com/alsessions/adspot#readme",
+  "devDependencies": {
+    "@tailwindcss/cli": "^4.3.3",
+    "tailwindcss": "^4.3.3"
+  },
+  "private": "true"
+}

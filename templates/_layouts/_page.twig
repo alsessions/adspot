@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="{% block description %}AdSpot connects New York businesses with high-impact billboard advertising across the state.{% endblock %}">
+    <title>{% block title %}AdSpot{% endblock %}</title>
+    <link rel="stylesheet" href="{{ siteUrl('css/app.css') }}">
+    {% block head %}{% endblock %}
+</head>
+<body class="min-h-screen bg-yellow-300 text-zinc-950 antialiased">
+    {% include '_partials/_nav.twig' %}
+
+    <main class="min-h-screen">
+        {% block content %}{% endblock %}
+    </main>
+
+    {% include '_partials/_footer.twig' %}
+
+    {% block scripts %}{% endblock %}
+</body>
+</html>

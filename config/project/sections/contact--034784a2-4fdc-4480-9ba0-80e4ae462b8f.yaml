@@ -1,0 +1,21 @@
+defaultPlacement: end
+enableVersioning: true
+entryTypes:
+  -
+    uid: eb47da8d-287d-4d74-97d8-59ff69eaa2e6 # Contact Page
+handle: contact
+maxAuthors: 1
+minAuthors: 1
+name: 'Contact Form'
+previewTargets:
+  -
+    label: 'Primary entry page'
+    urlFormat: '{url}'
+propagationMethod: all
+siteSettings:
+  4697f176-6bfa-4a98-85e5-a7b83e25d7bc: # adspot
+    enabledByDefault: true
+    hasUrls: true
+    template: contact/_entry.twig
+    uriFormat: contact
+type: single

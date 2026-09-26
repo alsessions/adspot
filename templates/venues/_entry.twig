@@ -1,0 +1,20 @@
+{% extends '_layouts/_page.twig' %}
+
+{% block title %}{{ entry.title }} | AdSpot{% endblock %}
+{% block description %}{{ entry.bodyText ? entry.bodyText|striptags|truncate(160) : 'A billboard venue available through AdSpot.' }}{% endblock %}
+
+{% block content %}
+    {% include '_partials/_entry-content.twig' with { entry: entry } only %}
+
+    {% set address = entry.venueAddress %}
+    {% if address and not address.isEmpty() %}
+        <section class="mx-auto max-w-7xl px-6 pb-16 lg:px-10 lg:pb-24">
+            <h2 class="text-sm font-bold tracking-[0.2em] uppercase">Location</h2>
+            <address class="mt-3 text-lg not-italic">{{ address }}</address>
+            {% set mapQuery = address.formatted ?: address %}
+            <div class="mt-6 overflow-hidden rounded-xl border-2 border-zinc-950">
+                <iframe src="https://maps.google.com/maps?q={{ mapQuery|url_encode }}&amp;z=15&amp;output=embed" title="Map showing {{ entry.title }}" class="aspect-video w-full" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            </div>
+        </section>
+    {% endif %}
+{% endblock %}

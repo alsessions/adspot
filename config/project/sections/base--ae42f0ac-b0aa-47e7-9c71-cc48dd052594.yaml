@@ -1,0 +1,25 @@
+defaultPlacement: end
+enableVersioning: true
+entryTypes:
+  -
+    uid: be0d1ca8-c22c-4404-9565-2356c6520f02 # Page Builder
+handle: base
+maxAuthors: 1
+minAuthors: 1
+name: 'Basic Page'
+previewTargets:
+  -
+    label: 'Primary entry page'
+    refresh: '1'
+    urlFormat: '{url}'
+propagationMethod: all
+siteSettings:
+  4697f176-6bfa-4a98-85e5-a7b83e25d7bc: # adspot
+    enabledByDefault: true
+    hasUrls: true
+    template: basic/_entry.twig
+    uriFormat: '{slug}'
+structure:
+  maxLevels: null
+  uid: 45cf763b-4e13-4786-9c9a-1da69928a4c4
+type: structure

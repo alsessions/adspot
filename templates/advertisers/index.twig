@@ -1,0 +1,35 @@
+{% extends '_layouts/_page.twig' %}
+
+{% block title %}Advertisers | AdSpot{% endblock %}
+{% block description %}Explore advertisers working with AdSpot across New York State.{% endblock %}
+
+{% block content %}
+    {% set advertisers = craft.entries()
+        .section('advertisers')
+        .type('advertiser')
+        .orderBy('title asc')
+        .all() %}
+
+    <section class="mx-auto min-h-screen max-w-7xl px-6 py-16 lg:px-10 lg:py-24">
+        <p class="text-sm font-bold tracking-[0.2em] uppercase">Our network</p>
+        <h1 class="mt-4 text-5xl font-black tracking-[-0.05em] uppercase sm:text-7xl">Advertisers</h1>
+
+        {% if advertisers %}
+            <div class="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+                {% for advertiser in advertisers %}
+                    {% set cardImage = advertiser.pageImage.kind('image').one() %}
+                    {% set cardImageUrl = cardImage ? cardImage.getUrl('pageImage') %}
+                    <a href="{{ advertiser.url }}" class="group flex min-h-48 flex-col justify-between border-2 border-zinc-950 bg-cover bg-center rounded-xl p-6 transition hover:-translate-y-0.5 hover:shadow-[4px_4px_0_0_#18181b] {{ cardImage ? 'text-white' : 'bg-yellow-200' }}"{% if cardImage %} style="background-image: linear-gradient(rgb(0 0 0 / 65%), rgb(0 0 0 / 65%)), url('{{ cardImageUrl }}')"{% endif %}>
+                        <h2 class="text-3xl font-black tracking-[-0.04em] uppercase">{{ advertiser.title }}</h2>
+                        {% if advertiser.bodyText %}
+                            <p class="mt-4 line-clamp-3 leading-relaxed">{{ advertiser.bodyText|striptags|truncate(140) }}</p>
+                        {% endif %}
+                        <span class="mt-8 font-bold">View advertiser <span aria-hidden="true">→</span></span>
+                    </a>
+                {% endfor %}
+            </div>
+        {% else %}
+            <p class="mt-10 text-lg">No advertisers have been added yet.</p>
+        {% endif %}
+    </section>
+{% endblock %}

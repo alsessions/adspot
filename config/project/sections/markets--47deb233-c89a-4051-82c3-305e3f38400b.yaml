@@ -1,0 +1,24 @@
+defaultPlacement: end
+enableVersioning: true
+entryTypes:
+  -
+    uid: ea99dddb-ae92-4c61-a446-127f44033c56 # Market
+handle: markets
+maxAuthors: 1
+minAuthors: 1
+name: Markets
+previewTargets:
+  -
+    label: 'Primary entry page'
+    urlFormat: '{url}'
+propagationMethod: all
+siteSettings:
+  4697f176-6bfa-4a98-85e5-a7b83e25d7bc: # adspot
+    enabledByDefault: true
+    hasUrls: true
+    template: markets/_entry.twig
+    uriFormat: 'markets/{slug}'
+structure:
+  maxLevels: null
+  uid: d5a94924-2402-4480-adec-8e3512e183bf
+type: structure
