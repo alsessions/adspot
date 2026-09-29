@@ -1,4 +1,4 @@
-dateModified: 1790555370
+dateModified: 1790705896
 email:
   fromEmail: admin@adspot.test
   fromName: adspot
@@ -52,13 +52,13 @@ plugins:
     licenseKey: TLKHS7H7FB968SY2ITVP49IW
     schemaVersion: 4.6.0
     settings:
-      browserKey: AIzaSyCjAiScJxgc5ulTsubIGTnrriH8jlkD0Fc
+      browserKey: $GOOGLEMAPS_BROWSERKEY
       geolocationService: null
       ipstackApiAccessKey: null
       maxmindLicenseKey: null
       maxmindService: null
       maxmindUserId: null
-      serverKey: AIzaSyA82RcBDRlXJh8fR5eMr1yGoTVn4RJvaQE
+      serverKey: $GOOGLEMAPS_SERVERKEY
 system:
   edition: solo
   live: true
