@@ -1,20 +1,20 @@
 columnSuffix: null
-handle: venueAddress
+handle: address
 instructions: null
-name: 'Venue Address'
+name: Address
 searchable: false
 settings:
   coordinatesDefault:
     __assoc__:
       -
         - lat
-        - 32.3113966
+        - '32.3113966'
       -
         - lng
-        - -64.7527469
+        - '-64.7527469'
       -
         - zoom
-        - 6
+        - '6'
   coordinatesMode: readOnly
   dragPinDefault: null
   dragPinLatitude: null
@@ -199,7 +199,7 @@ settings:
           - 100
         -
           - enabled
-          - true
+          - false
         -
           - autocomplete
           - false

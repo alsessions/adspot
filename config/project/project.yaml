@@ -1,4 +1,4 @@
-dateModified: 1790465229
+dateModified: 1790555370
 email:
   fromEmail: admin@adspot.test
   fromName: adspot
@@ -13,7 +13,6 @@ fs:
     url: $PRIMARY_SITE_URL/photos
 meta:
   __names__:
-    9a1a42e9-7ece-4412-a477-5c029b2cb743: 'Venue Address' # Venue Address
     47deb233-c89a-4051-82c3-305e3f38400b: Markets # Markets
     76c1cdc0-e432-47b6-8e17-3c5675ba9e35: 'Contact Form' # Contact Form
     089fd27a-b2e4-41f2-bfd2-66589becca54: Advertisers # Advertisers
@@ -22,6 +21,7 @@ meta:
     937f197b-670d-40ec-8b51-8cccdcef54ea: Advertiser # Advertiser
     982e5e70-7d97-46de-8aed-9e318f40e81d: 'Page Image' # Page Image
     4697f176-6bfa-4a98-85e5-a7b83e25d7bc: adspot # adspot
+    6461c86f-2160-4600-8e53-931f62b2140e: Address # Address
     034784a2-4fdc-4480-9ba0-80e4ae462b8f: 'Contact Form' # Contact Form
     57893d02-3fec-449e-a138-957e9323d2a1: Photos # Photos
     6503426f-1a39-4b49-b81f-e6d36b39370a: New # New
@@ -51,6 +51,14 @@ plugins:
     enabled: true
     licenseKey: TLKHS7H7FB968SY2ITVP49IW
     schemaVersion: 4.6.0
+    settings:
+      browserKey: AIzaSyCjAiScJxgc5ulTsubIGTnrriH8jlkD0Fc
+      geolocationService: null
+      ipstackApiAccessKey: null
+      maxmindLicenseKey: null
+      maxmindService: null
+      maxmindUserId: null
+      serverKey: AIzaSyA82RcBDRlXJh8fR5eMr1yGoTVn4RJvaQE
 system:
   edition: solo
   live: true

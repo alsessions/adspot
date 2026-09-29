@@ -74,11 +74,11 @@ fieldLayouts:
             warning: null
             width: 100
           -
-            dateAdded: null
+            dateAdded: '2026-09-28T00:29:30+00:00'
             editCondition: null
             elementCondition: null
             elementEditCondition: null
-            fieldUid: 9a1a42e9-7ece-4412-a477-5c029b2cb743 # Venue Address
+            fieldUid: 6461c86f-2160-4600-8e53-931f62b2140e # Address
             handle: null
             instructions: null
             label: null
@@ -86,7 +86,7 @@ fieldLayouts:
             required: false
             tip: null
             type: craft\fieldlayoutelements\CustomField
-            uid: 868a2e80-1103-44dd-96ae-7d70200ee6bf
+            uid: dc3dfe93-89f3-4562-a989-65aec002c632
             userCondition: null
             warning: null
             width: 100
