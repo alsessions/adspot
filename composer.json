@@ -4,6 +4,7 @@
   "require": {
     "craftcms/ckeditor": "^5.7.0",
     "craftcms/cms": "^5.9.0",
+    "craftcms/contact-form": "^3.1.0",
     "doublesecretagency/craft-googlemaps": "^5.2.3",
     "verbb/expanded-singles": "^3.0.5",
     "verbb/formie": "^3.1.43",

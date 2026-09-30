@@ -10,7 +10,7 @@
         .orderBy('title asc')
         .all() %}
 
-    <section class="mx-auto min-h-screen max-w-7xl px-6 py-16 lg:px-10 lg:py-24">
+    <section class="mx-auto mb-24 max-w-7xl px-6 py-16 lg:px-10 lg:py-24">
         <p class="text-sm font-bold tracking-[0.2em] uppercase">Our locations</p>
         <h1 class="mt-4 text-5xl font-black tracking-[-0.05em] uppercase sm:text-7xl">Venues</h1>
 
@@ -32,4 +32,18 @@
             <p class="mt-10 text-lg">No venues have been added yet.</p>
         {% endif %}
     </section>
+
+    {% if venues %}
+        <section class="mx-auto max-w-7xl px-6 pb-16 lg:px-10 lg:pb-24" aria-labelledby="venues-map-heading">
+            <h2 id="venues-map-heading" class="sr-only">Venue locations</h2>
+            <div class="w-full [&_.gm-map]:h-[50svh] [&_.gm-map]:min-h-96 [&_.gm-map]:w-full lg:[&_.gm-map]:h-[70svh]" role="region" aria-label="Map showing all venue locations">
+                {{ googleMaps.map(venues, {
+                    id: 'venues-map',
+                    field: 'address',
+                    cluster: true,
+                    infoWindowTemplate: '_partials/_venue-map-info'
+                }).tag() }}
+            </div>
+        </section>
+    {% endif %}
 {% endblock %}

@@ -1,0 +1,105 @@
+{% macro errorList(errors) %}
+    {% if errors %}
+        <ul class="mt-2 space-y-1 text-sm font-bold text-red-700">
+            {% for error in errors %}
+                <li>{{ error }}</li>
+            {% endfor %}
+        </ul>
+    {% endif %}
+{% endmacro %}
+
+{% set submission = submission ?? null %}
+{% set message = submission.message ?? {} %}
+
+{% if craft.app.session.hasFlash('success') %}
+    <div class="mb-6 border-2 border-zinc-950 bg-yellow-200 p-4 font-bold" role="status">
+        {{ craft.app.session.getFlash('success') }}
+    </div>
+{% elseif craft.app.session.hasFlash('error') %}
+    <div class="mb-6 border-2 border-red-700 bg-red-50 p-4 font-bold text-red-700" role="alert">
+        {{ craft.app.session.getFlash('error') }}
+    </div>
+{% endif %}
+
+<form method="post" action="" accept-charset="UTF-8" class="space-y-6">
+    {{ csrfInput() }}
+    {{ actionInput('contact-form/send') }}
+
+    <div>
+        <label for="from-name" class="block font-bold">Your Name <span aria-hidden="true">*</span></label>
+        {{ input('text', 'fromName', submission.fromName ?? '', {
+            id: 'from-name',
+            autocomplete: 'name',
+            required: true,
+            class: 'mt-2 w-full rounded-xl border-2 border-zinc-950 bg-white px-4 py-3 focus:outline-none focus:ring-4 focus:ring-yellow-300',
+        }) }}
+        {{ submission ? _self.errorList(submission.getErrors('fromName')) }}
+    </div>
+
+    <div>
+        <label for="from-email" class="block font-bold">Email Address <span aria-hidden="true">*</span></label>
+        <p id="from-email-instructions" class="mt-1 text-sm">Please enter your email so we can get in touch.</p>
+        {{ input('email', 'fromEmail', submission.fromEmail ?? '', {
+            id: 'from-email',
+            autocomplete: 'email',
+            placeholder: 'e.g. psherman@wallaby.com',
+            required: true,
+            aria: {describedby: 'from-email-instructions'},
+            class: 'mt-2 w-full rounded-xl border-2 border-zinc-950 bg-white px-4 py-3 focus:outline-none focus:ring-4 focus:ring-yellow-300',
+        }) }}
+        {{ submission ? _self.errorList(submission.getErrors('fromEmail')) }}
+    </div>
+
+    <div>
+        <label for="phone" class="block font-bold">Phone</label>
+        {{ input('tel', 'message[Phone]', message.Phone ?? '', {
+            id: 'phone',
+            autocomplete: 'tel',
+            class: 'mt-2 w-full rounded-xl border-2 border-zinc-950 bg-white px-4 py-3 focus:outline-none focus:ring-4 focus:ring-yellow-300',
+        }) }}
+    </div>
+
+    <fieldset>
+        <legend class="font-bold">Preferred Response</legend>
+        <div class="mt-3 flex flex-wrap gap-6">
+            {% for option in ['Email', 'Phone', 'SMS'] %}
+                <label class="flex items-center gap-2">
+                    {{ input('radio', 'message[Preferred Response]', option, {
+                        checked: (message['Preferred Response'] ?? '') == option,
+                        class: 'size-5 accent-zinc-950',
+                    }) }}
+                    <span>{{ option }}</span>
+                </label>
+            {% endfor %}
+        </div>
+    </fieldset>
+
+    <div>
+        <label for="subject" class="block font-bold">Subject</label>
+        {{ input('text', 'subject', submission.subject ?? '', {
+            id: 'subject',
+            class: 'mt-2 w-full rounded-xl border-2 border-zinc-950 bg-white px-4 py-3 focus:outline-none focus:ring-4 focus:ring-yellow-300',
+        }) }}
+        {{ submission ? _self.errorList(submission.getErrors('subject')) }}
+    </div>
+
+    <div>
+        <label for="message" class="block font-bold">Message <span aria-hidden="true">*</span></label>
+        <p id="message-instructions" class="mt-1 text-sm">Please enter your comments.</p>
+        {{ tag('textarea', {
+            text: message.body ?? '',
+            id: 'message',
+            name: 'message[body]',
+            rows: 8,
+            placeholder: 'e.g. The reason for my enquiry is...',
+            required: true,
+            aria: {describedby: 'message-instructions'},
+            class: 'mt-2 w-full rounded-xl border-2 border-zinc-950 bg-white px-4 py-3 focus:outline-none focus:ring-4 focus:ring-yellow-300',
+        }) }}
+        {{ submission ? _self.errorList(submission.getErrors('message')) }}
+    </div>
+
+    <button type="submit" class="border-2 border-zinc-950 bg-zinc-950 px-6 py-3 font-bold text-yellow-300 transition hover:bg-transparent hover:text-zinc-950 focus:outline-none focus:ring-4 focus:ring-yellow-300">
+        Contact us
+    </button>
+</form>
