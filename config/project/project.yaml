@@ -1,4 +1,4 @@
-dateModified: 1790793358
+dateModified: 1790796167
 email:
   fromEmail: admin@adspot.test
   fromName: adspot
@@ -14,7 +14,6 @@ fs:
 meta:
   __names__:
     47deb233-c89a-4051-82c3-305e3f38400b: Markets # Markets
-    76c1cdc0-e432-47b6-8e17-3c5675ba9e35: 'Contact Form' # Contact Form
     089fd27a-b2e4-41f2-bfd2-66589becca54: Advertisers # Advertisers
     532fdf8b-86b3-40c0-b1a8-1691f2e70042: adspot # adspot
     642b551f-79c0-4ce6-afac-2db5a3f2761a: 'Page Image' # Page Image
@@ -24,7 +23,6 @@ meta:
     6461c86f-2160-4600-8e53-931f62b2140e: Address # Address
     034784a2-4fdc-4480-9ba0-80e4ae462b8f: 'Contact Form' # Contact Form
     57893d02-3fec-449e-a138-957e9323d2a1: Photos # Photos
-    6503426f-1a39-4b49-b81f-e6d36b39370a: New # New
     ae42f0ac-b0aa-47e7-9c71-cc48dd052594: 'Basic Page' # Basic Page
     b0f0711a-19da-4978-aa0d-b35e95cc0975: 'Body Text' # Body Text
     be0d1ca8-c22c-4404-9565-2356c6520f02: 'Page Builder' # Page Builder
@@ -45,11 +43,6 @@ plugins:
     edition: standard
     enabled: true
     schemaVersion: 1.0.0
-  formie:
-    edition: standard
-    enabled: true
-    licenseKey: FNI0GEMSH96XV2RMAOV02VMK
-    schemaVersion: 3.4.13
   google-maps:
     edition: standard
     enabled: true

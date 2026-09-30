@@ -7,7 +7,6 @@
     "craftcms/contact-form": "^3.1.0",
     "doublesecretagency/craft-googlemaps": "^5.2.3",
     "verbb/expanded-singles": "^3.0.5",
-    "verbb/formie": "^3.1.43",
     "vlucas/phpdotenv": "^5.4.0"
   },
   "require-dev": {
