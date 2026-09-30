@@ -1,17 +1,22 @@
-<header class="mx-auto flex max-w-7xl flex-wrap items-center justify-between gap-4 px-6 py-6 lg:px-10">
-    <a href="{{ siteUrl }}" class="text-2xl font-black tracking-[-0.08em] uppercase">AdSpot</a>
-    <nav class="flex flex-wrap items-center gap-3" aria-label="Primary navigation">
-        <a href="{{ siteUrl('advertisers') }}" class="border-2 border-zinc-950 bg-zinc-950 px-4 py-2.5 text-sm font-bold text-yellow-300 transition hover:bg-transparent hover:text-zinc-950">
-            Advertisers
-        </a>
-        <a href="{{ siteUrl('venues') }}" class="border-2 border-zinc-950 bg-zinc-950 px-4 py-2.5 text-sm font-bold text-yellow-300 transition hover:bg-transparent hover:text-zinc-950">
-            Venues
-        </a>
-        <a href="{{ siteUrl('markets') }}" class="border-2 border-zinc-950 bg-zinc-950 px-4 py-2.5 text-sm font-bold text-yellow-300 transition hover:bg-transparent hover:text-zinc-950">
-            Markets
-        </a>
-        <a href="{{ siteUrl('contact') }}" class="border-2 border-zinc-950 bg-zinc-950 px-4 py-2.5 text-sm font-bold text-yellow-300 transition hover:bg-transparent hover:text-zinc-950">
-            Contact
-        </a>
-    </nav>
+<header class="border-b-2 border-zinc-950 bg-yellow-400">
+    <div class="mx-auto flex max-w-7xl flex-wrap items-center justify-between gap-4 px-6 py-6 lg:px-10">
+        <a href="{{ siteUrl }}" class="text-2xl font-black tracking-[-0.08em] uppercase">AdSpot</a>
+        <nav class="flex flex-wrap items-center gap-6" aria-label="Primary navigation">
+            <a href="{{ siteUrl('advertisers') }}" class="font-semibold text-zinc-950 hover:underline">
+                Advertisers
+            </a>
+            <a href="{{ siteUrl('venues') }}" class="font-semibold text-zinc-950 hover:underline">
+                Venues
+            </a>
+            <a href="{{ siteUrl('markets') }}" class="font-semibold text-zinc-950 hover:underline">
+                Markets
+            </a>
+            <a href="{{ siteUrl('blog') }}" class="font-semibold text-zinc-950 hover:underline">
+                Blog
+            </a>
+            <a href="{{ siteUrl('contact') }}" class="font-semibold text-zinc-950 hover:underline">
+                Contact
+            </a>
+        </nav>
+    </div>
 </header>

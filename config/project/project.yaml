@@ -1,4 +1,4 @@
-dateModified: 1790796167
+dateModified: 1790803894
 email:
   fromEmail: admin@adspot.test
   fromName: adspot
@@ -13,10 +13,16 @@ fs:
     url: $PRIMARY_SITE_URL/photos
 meta:
   __names__:
+    1bbf2698-253c-4804-88a0-447e698c608c: 'Venues Index' # Venues Index
+    1bf351c9-0ceb-4394-bd5b-ab17d133083f: Blog # Blog
+    6e5dd686-3133-43ce-ab8e-440d75b33de4: Blog # Blog
+    43f4f99f-df7a-4b4b-9b73-6631202cb847: 'Index Image' # Index Image
+    45c9bc75-0732-482e-8a28-49b55e6efc6e: 'Advertisers Index' # Advertisers Index
     47deb233-c89a-4051-82c3-305e3f38400b: Markets # Markets
     089fd27a-b2e4-41f2-bfd2-66589becca54: Advertisers # Advertisers
     532fdf8b-86b3-40c0-b1a8-1691f2e70042: adspot # adspot
     642b551f-79c0-4ce6-afac-2db5a3f2761a: 'Page Image' # Page Image
+    8f52b621-39cc-48d2-b870-890301665097: 'Index Page' # Index Page
     937f197b-670d-40ec-8b51-8cccdcef54ea: Advertiser # Advertiser
     982e5e70-7d97-46de-8aed-9e318f40e81d: 'Page Image' # Page Image
     4697f176-6bfa-4a98-85e5-a7b83e25d7bc: adspot # adspot
@@ -26,10 +32,12 @@ meta:
     ae42f0ac-b0aa-47e7-9c71-cc48dd052594: 'Basic Page' # Basic Page
     b0f0711a-19da-4978-aa0d-b35e95cc0975: 'Body Text' # Body Text
     be0d1ca8-c22c-4404-9565-2356c6520f02: 'Page Builder' # Page Builder
+    c872b290-9313-4f28-acd2-925457a79e5d: 'Markets Index' # Markets Index
     cb5a6909-604b-4ccf-b8dd-9caa32732c44: Venues # Venues
     dc6e1286-746c-4112-b261-a04d4ebbf6d9: Venue # Venue
     ea99dddb-ae92-4c61-a446-127f44033c56: Market # Market
     eb47da8d-287d-4d74-97d8-59ff69eaa2e6: 'Contact Page' # Contact Page
+    f4366037-2a73-4bd6-a82c-2071d6f445a4: 'Blog Index' # Blog Index
 plugins:
   ckeditor:
     edition: standard

@@ -2,24 +2,20 @@ defaultPlacement: end
 enableVersioning: true
 entryTypes:
   -
-    uid: dc6e1286-746c-4112-b261-a04d4ebbf6d9 # Venue
-handle: venues
+    uid: 8f52b621-39cc-48d2-b870-890301665097 # Index Page
+handle: blogIndex
 maxAuthors: 1
 minAuthors: 1
-name: Venues
+name: 'Blog Index'
 previewTargets:
   -
     label: 'Primary entry page'
-    refresh: '1'
     urlFormat: '{url}'
 propagationMethod: all
 siteSettings:
   4697f176-6bfa-4a98-85e5-a7b83e25d7bc: # adspot
     enabledByDefault: true
     hasUrls: true
-    template: venues/_entry.twig
-    uriFormat: 'venues/{slug}'
-structure:
-  maxLevels: null
-  uid: 9a4fdffa-827a-4cb8-a20a-8373aaeaa9c6
-type: structure
+    template: blog/index.twig
+    uriFormat: blog
+type: single

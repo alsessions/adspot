@@ -7,30 +7,52 @@
     <title>AdSpot | Billboard Advertising Across New York</title>
     <link rel="stylesheet" href="{{ siteUrl('css/app.css') }}">
 </head>
-<body class="min-h-screen bg-yellow-300 text-zinc-950 antialiased">
+<body class="min-h-screen bg-gradient-to-br from-yellow-400 via-yellow-300 to-yellow-200 text-zinc-950 antialiased">
     {% include '_partials/_nav.twig' %}
 
     <main>
-        <section class="mx-auto grid min-h-screen max-w-7xl items-center gap-12 px-6 py-16 lg:grid-cols-[1fr_0.65fr] lg:px-10 lg:py-20">
-            <div>
-                <p class="mb-6 text-sm font-bold tracking-[0.2em] uppercase">Billboard advertising · New York State</p>
-                <h1 class="max-w-5xl text-6xl leading-[0.88] font-black tracking-[-0.07em] uppercase sm:text-7xl lg:text-[7.5rem]">
-                    Put your brand in the right spot.
-                </h1>
-                <p class="mt-8 max-w-2xl text-xl leading-relaxed font-medium sm:text-2xl">
-                    AdSpot helps businesses reach more people with high-impact billboard placements across New York.
-                </p>
-            </div>
+        <section class="relative overflow-hidden">
+            <div class="relative mx-auto grid min-h-[calc(100svh-82px)] max-w-7xl items-center gap-16 px-6 py-20 lg:grid-cols-[1fr_0.55fr] lg:px-10 lg:py-24">
+                <div>
+                    <p class="mb-8 text-sm font-bold tracking-[0.2em] italic">Billboard advertising · New York State</p>
+                    <h1 class="max-w-5xl leading-[0.88] tracking-[-0.06em]">
+                        <span class="block text-5xl font-light sm:text-7xl lg:text-8xl">Put your brand</span>
+                        <span class="mt-2 block text-6xl font-black uppercase sm:text-8xl lg:text-9xl">in the right spot.</span>
+                    </h1>
+                    <p class="mt-10 max-w-2xl text-xl leading-relaxed font-medium sm:text-2xl">
+                        AdSpot helps businesses reach more people with high-impact billboard placements across New York.
+                    </p>
+                    <a href="#contact" class="mt-10 inline-flex items-center gap-4 rounded-full border-2 border-zinc-950 px-8 py-4 font-bold transition hover:bg-zinc-950 hover:text-yellow-300">
+                        Start your campaign <span aria-hidden="true">→</span>
+                    </a>
+                </div>
 
-            <aside id="contact" class="border-4 border-zinc-950 bg-yellow-200 p-7 shadow-[10px_10px_0_0_#18181b] sm:p-9">
-                <p class="text-xs font-bold tracking-[0.2em] uppercase">Your next campaign</p>
-                <h2 class="mt-4 text-4xl leading-none font-black tracking-[-0.05em] uppercase">Ready to get noticed?</h2>
-                <p class="mt-5 text-lg leading-relaxed">Tell us who you want to reach. We’ll help you find the right location.</p>
-                <a href="mailto:hello@adspot.com" class="mt-8 inline-flex w-full items-center justify-between bg-zinc-950 px-5 py-4 font-bold text-yellow-300 transition hover:bg-zinc-800">
-                    hello@adspot.com
-                    <span aria-hidden="true">→</span>
-                </a>
-            </aside>
+                <aside id="contact" class="border-t-2 border-zinc-950 pt-10 lg:border-t-0 lg:border-l-2 lg:pt-0 lg:pl-10">
+                    <p class="text-xs font-bold tracking-[0.2em] uppercase">Your next campaign</p>
+                    <h2 class="mt-4 text-4xl leading-none font-black tracking-[-0.05em] uppercase sm:text-5xl">Ready to get noticed?</h2>
+                    <p class="mt-5 text-lg leading-relaxed">Tell us who you want to reach. We’ll help you find the right location.</p>
+                    <a href="mailto:hello@adspot.com" class="mt-8 inline-flex items-center gap-4 rounded-full bg-zinc-950 px-7 py-4 font-bold text-yellow-300 transition hover:bg-zinc-800">
+                        hello@adspot.com
+                        <span aria-hidden="true">→</span>
+                    </a>
+                </aside>
+            </div>
+        </section>
+
+        <section class="border-y-2 border-zinc-950">
+            <div class="mx-auto max-w-7xl px-6 py-20 lg:px-10 lg:py-24">
+                <p class="text-sm font-bold tracking-[0.2em] uppercase">Content section 01</p>
+                <h2 class="mt-4 max-w-3xl text-4xl font-black tracking-[-0.05em] uppercase sm:text-6xl">Section heading</h2>
+                <p class="mt-6 max-w-2xl text-lg leading-relaxed">Use this space for supporting homepage content, featured services, or a focused call to action.</p>
+            </div>
+        </section>
+
+        <section>
+            <div class="mx-auto max-w-7xl px-6 py-20 lg:px-10 lg:py-24">
+                <p class="text-sm font-bold tracking-[0.2em] uppercase">Content section 02</p>
+                <h2 class="mt-4 max-w-3xl text-4xl font-black tracking-[-0.05em] uppercase sm:text-6xl">Section heading</h2>
+                <p class="mt-6 max-w-2xl text-lg leading-relaxed">Use this space for another key message, customer story, featured location, or conversion point.</p>
+            </div>
         </section>
     </main>
     {% include '_partials/_footer.twig' %}

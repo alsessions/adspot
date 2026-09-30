@@ -2,11 +2,8 @@ allowLineBreaksInTitles: false
 color: null
 description: null
 fieldLayouts:
-  771ead05-2048-448d-a6f6-d7a9c0802c13:
+  4a1a5d93-f6a5-4ace-a0b5-88cf687f3c17:
     cardThumbAlignment: end
-    cardView:
-      - 'layoutElement:6258982f-e926-4342-860d-7b4e4ccf8ab4'
-      - 'layoutElement:9e747d9f-8c23-47e9-9a5f-b3a7b2acff5a'
     tabs:
       -
         elementCondition: null
@@ -16,7 +13,7 @@ fieldLayouts:
             autocomplete: false
             autocorrect: true
             class: null
-            dateAdded: '2026-09-26T22:06:01+00:00'
+            dateAdded: '2026-09-30T21:31:34+00:00'
             disabled: false
             elementCondition: null
             id: null
@@ -35,16 +32,16 @@ fieldLayouts:
             tip: null
             title: null
             type: craft\fieldlayoutelements\entries\EntryTitleField
-            uid: c4122a99-3414-4dbb-95fd-7a0945eaac85
+            uid: ba64a604-acde-4d7d-86fe-bdff95c950b8
             userCondition: null
             warning: null
             width: 100
           -
-            dateAdded: '2026-09-26T23:05:10+00:00'
+            dateAdded: '2026-09-30T21:31:34+00:00'
             editCondition: null
             elementCondition: null
             elementEditCondition: null
-            fieldUid: 642b551f-79c0-4ce6-afac-2db5a3f2761a # Page Image
+            fieldUid: 43f4f99f-df7a-4b4b-9b73-6631202cb847 # Index Image
             handle: null
             instructions: null
             label: null
@@ -52,35 +49,18 @@ fieldLayouts:
             required: false
             tip: null
             type: craft\fieldlayoutelements\CustomField
-            uid: 9e747d9f-8c23-47e9-9a5f-b3a7b2acff5a
-            userCondition: null
-            warning: null
-            width: 100
-          -
-            dateAdded: '2026-09-26T22:08:22+00:00'
-            editCondition: null
-            elementCondition: null
-            elementEditCondition: null
-            fieldUid: b0f0711a-19da-4978-aa0d-b35e95cc0975 # Body Text
-            handle: null
-            instructions: null
-            label: null
-            oldFieldUid: null
-            required: false
-            tip: null
-            type: craft\fieldlayoutelements\CustomField
-            uid: 6258982f-e926-4342-860d-7b4e4ccf8ab4
+            uid: 28d840cb-b9a1-484f-b330-e0bd0745dfd3
             userCondition: null
             warning: null
             width: 100
         name: Content
-        uid: 4df45968-b417-45fb-802f-9e6155e94e02
+        uid: e0b08c73-6245-447a-bac7-1b68557a1f74
         userCondition: null
     thumbFieldKey: null
-handle: venue
+handle: indexPage
 hasTitleField: true
 icon: null
-name: Venue
+name: 'Index Page'
 showSlugField: true
 showStatusField: true
 slugTranslationKeyFormat: null

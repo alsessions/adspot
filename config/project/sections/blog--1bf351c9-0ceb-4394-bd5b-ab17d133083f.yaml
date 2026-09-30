@@ -2,11 +2,11 @@ defaultPlacement: end
 enableVersioning: true
 entryTypes:
   -
-    uid: dc6e1286-746c-4112-b261-a04d4ebbf6d9 # Venue
-handle: venues
+    uid: be0d1ca8-c22c-4404-9565-2356c6520f02 # Page Builder
+handle: blog
 maxAuthors: 1
 minAuthors: 1
-name: Venues
+name: Blog
 previewTargets:
   -
     label: 'Primary entry page'
@@ -17,9 +17,6 @@ siteSettings:
   4697f176-6bfa-4a98-85e5-a7b83e25d7bc: # adspot
     enabledByDefault: true
     hasUrls: true
-    template: venues/_entry.twig
-    uriFormat: 'venues/{slug}'
-structure:
-  maxLevels: null
-  uid: 9a4fdffa-827a-4cb8-a20a-8373aaeaa9c6
-type: structure
+    template: blog/_entry.twig
+    uriFormat: 'blog/{slug}'
+type: channel

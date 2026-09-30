@@ -1,0 +1,59 @@
+{% extends '_layouts/_page.twig' %}
+
+{% block title %}Blog | AdSpot{% endblock %}
+{% block description %}News, ideas, and updates from AdSpot.{% endblock %}
+
+{% block content %}
+    {% set indexImage = entry.indexImage.kind('image').one() %}
+    {% set posts = craft.entries()
+        .section('blog')
+        .type('pageBuilder')
+        .orderBy('postDate desc')
+        .all() %}
+
+    {% if indexImage %}
+        <figure class="relative w-full overflow-hidden">
+            <img src="{{ indexImage.getUrl('pageImage') }}" alt="{{ indexImage.alt ?: entry.title }}" width="{{ indexImage.getWidth('pageImage') }}" height="{{ indexImage.getHeight('pageImage') }}" class="h-[50vh] min-h-80 w-full object-cover" fetchpriority="high">
+            <div class="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/70 to-transparent">
+                <div class="mx-auto max-w-7xl px-6 pb-8 lg:px-10 lg:pb-12">
+                    <h1 class="text-5xl font-black tracking-[-0.05em] text-white uppercase sm:text-7xl">{{ entry.title }}</h1>
+                </div>
+            </div>
+        </figure>
+    {% endif %}
+
+    <section class="mx-auto min-h-screen max-w-7xl px-6 py-16 lg:px-10 lg:py-24">
+        <p class="text-sm font-bold tracking-[0.2em] uppercase">Latest news</p>
+        {% if not indexImage %}
+            <h1 class="mt-4 text-5xl font-black tracking-[-0.05em] uppercase sm:text-7xl">{{ entry.title }}</h1>
+        {% endif %}
+
+        {% if posts %}
+            <div class="mt-12">
+                {% for post in posts %}
+                    {% set cardImage = post.pageImage.kind('image').one() %}
+                    {% if not loop.first %}
+                        <hr class="my-10 border-t-2 border-zinc-950 md:my-14">
+                    {% endif %}
+                    <a href="{{ post.url }}" class="group grid gap-6 {{ cardImage ? 'sm:grid-cols-[1fr_2fr]' : '' }} md:gap-10">
+                        {% if cardImage %}
+                            <img src="{{ cardImage.getUrl('pageImage') }}" alt="{{ cardImage.alt ?: post.title }}" width="{{ cardImage.getWidth('pageImage') }}" height="{{ cardImage.getHeight('pageImage') }}" class="h-full min-h-56 w-full rounded-xl object-cover">
+                        {% endif %}
+                        <div class="flex min-h-56 flex-col justify-between">
+                            <div>
+                                <time datetime="{{ post.postDate|date('Y-m-d') }}" class="text-sm font-semibold md:text-base">{{ post.postDate|date('F j, Y') }}</time>
+                                <h2 class="mt-2 text-3xl font-black tracking-[-0.04em] uppercase group-hover:underline md:text-4xl">{{ post.title }}</h2>
+                                {% if post.bodyText %}
+                                    <p class="mt-4 line-clamp-5 leading-relaxed md:text-lg">{{ post.bodyText|striptags|truncate(400) }}</p>
+                                {% endif %}
+                            </div>
+                            <span class="mt-8 font-bold md:text-lg">Read article <span aria-hidden="true">→</span></span>
+                        </div>
+                    </a>
+                {% endfor %}
+            </div>
+        {% else %}
+            <p class="mt-10 text-lg">No blog posts have been added yet.</p>
+        {% endif %}
+    </section>
+{% endblock %}
