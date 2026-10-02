@@ -1,0 +1,26 @@
+columnSuffix: null
+handle: homeContent
+instructions: null
+name: Sections
+searchable: false
+settings:
+  createButtonLabel: 'Add content'
+  defaultIndexViewMode: cards
+  enableVersioning: true
+  entryTypes:
+    -
+      __assoc__:
+        -
+          - uid
+          - 4d51049d-7ebc-4158-9ca5-4ca8dfad73a8 # Content Section
+  includeTableView: false
+  maxEntries: null
+  minEntries: 1
+  pageSize: null
+  propagationKeyFormat: null
+  propagationMethod: all
+  showCardsInGrid: false
+  viewMode: blocks
+translationKeyFormat: null
+translationMethod: site
+type: craft\fields\Matrix

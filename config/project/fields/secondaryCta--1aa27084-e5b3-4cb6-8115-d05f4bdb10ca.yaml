@@ -1,0 +1,15 @@
+columnSuffix: null
+handle: secondaryCta
+instructions: null
+name: 'Secondary CTA'
+searchable: false
+settings:
+  fullGraphqlData: true
+  maxLength: 255
+  showLabelField: true
+  types:
+    - url
+    - email
+translationKeyFormat: null
+translationMethod: none
+type: craft\fields\Link
