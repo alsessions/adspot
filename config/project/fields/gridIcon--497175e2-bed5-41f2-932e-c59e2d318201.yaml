@@ -1,0 +1,88 @@
+columnSuffix: null
+handle: gridIcon
+instructions: 'Choose a Heroicon for this card.'
+name: Icon
+searchable: false
+settings:
+  customOptions: false
+  options:
+    -
+      __assoc__:
+        -
+          - label
+          - Megaphone
+        -
+          - value
+          - megaphone
+        -
+          - default
+          - true
+    -
+      __assoc__:
+        -
+          - label
+          - 'Bar chart'
+        -
+          - value
+          - chart-bar
+        -
+          - default
+          - false
+    -
+      __assoc__:
+        -
+          - label
+          - 'Map pin'
+        -
+          - value
+          - map-pin
+        -
+          - default
+          - false
+    -
+      __assoc__:
+        -
+          - label
+          - Storefront
+        -
+          - value
+          - building-storefront
+        -
+          - default
+          - false
+    -
+      __assoc__:
+        -
+          - label
+          - Users
+        -
+          - value
+          - users
+        -
+          - default
+          - false
+    -
+      __assoc__:
+        -
+          - label
+          - 'Presentation chart'
+        -
+          - value
+          - presentation-chart-line
+        -
+          - default
+          - false
+    -
+      __assoc__:
+        -
+          - label
+          - Dollar
+        -
+          - value
+          - currency-dollar
+        -
+          - default
+          - false
+translationKeyFormat: null
+translationMethod: none
+type: craft\fields\Dropdown

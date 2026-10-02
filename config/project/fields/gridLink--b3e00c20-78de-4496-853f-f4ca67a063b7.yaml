@@ -1,0 +1,15 @@
+columnSuffix: null
+handle: gridLink
+instructions: Optional.
+name: Link
+searchable: false
+settings:
+  fullGraphqlData: true
+  maxLength: 255
+  showLabelField: true
+  types:
+    - url
+    - entry
+translationKeyFormat: null
+translationMethod: none
+type: craft\fields\Link

@@ -1,4 +1,4 @@
-dateModified: 1790961558
+dateModified: 1790979098
 email:
   fromEmail: admin@adspot.test
   fromName: adspot
@@ -13,6 +13,7 @@ fs:
     url: $PRIMARY_SITE_URL/photos
 meta:
   __names__:
+    0c96b99e-876d-42fb-9783-09f02e856dc1: Body # Body
     1aa27084-e5b3-4cb6-8115-d05f4bdb10ca: 'Secondary CTA' # Secondary CTA
     1bbf2698-253c-4804-88a0-447e698c608c: 'Venues Index' # Venues Index
     1bf351c9-0ceb-4394-bd5b-ab17d133083f: Blog # Blog
@@ -21,31 +22,32 @@ meta:
     6e72687a-a30e-46cb-bd37-c39eece0b6d4: 'Body Copy' # Body Copy
     7ac39a8f-9250-4234-acfc-12fc4642e5cb: Heading # Heading
     8f52b621-39cc-48d2-b870-890301665097: 'Index Page' # Index Page
+    40bcc602-c1e4-4df5-9a5b-b88638466b68: 'Grid Item' # Grid Item
     43f4f99f-df7a-4b4b-9b73-6631202cb847: 'Index Image' # Index Image
     45c9bc75-0732-482e-8a28-49b55e6efc6e: 'Advertisers Index' # Advertisers Index
     47deb233-c89a-4051-82c3-305e3f38400b: Markets # Markets
-    089fd27a-b2e4-41f2-bfd2-66589becca54: Advertisers # Advertisers
     532fdf8b-86b3-40c0-b1a8-1691f2e70042: adspot # adspot
     642b551f-79c0-4ce6-afac-2db5a3f2761a: 'Page Image' # Page Image
     933f1d88-7747-498c-bf73-3edbd3fe304e: 'Secondary Heading' # Secondary Heading
-    937f197b-670d-40ec-8b51-8cccdcef54ea: Advertiser # Advertiser
     982e5e70-7d97-46de-8aed-9e318f40e81d: 'Page Image' # Page Image
     2010cd22-21b0-467b-9aae-27a6e8b72469: 'Primary CTA URL' # Primary CTA URL
     4697f176-6bfa-4a98-85e5-a7b83e25d7bc: adspot # adspot
     6461c86f-2160-4600-8e53-931f62b2140e: Address # Address
+    7602b626-c80f-4151-9c0b-acf9f14482ca: Grid # Grid
     7933b506-bd38-4166-9403-d5c1410702bb: 'Secondary Eyebrow' # Secondary Eyebrow
     034784a2-4fdc-4480-9ba0-80e4ae462b8f: 'Contact Form' # Contact Form
+    43685cdd-cfb6-48c5-b3b8-2b11def1ad07: Grid # Grid
     57893d02-3fec-449e-a138-957e9323d2a1: Photos # Photos
     77114ba1-ed67-47c2-8248-0eca5c805ac8: 'Primary CTA Label' # Primary CTA Label
+    497175e2-bed5-41f2-932e-c59e2d318201: Icon # Icon
     1072069c-d1cc-4ae6-8b0e-7bde0ef111e4: Sections # Sections
     a966887e-bf86-4f91-a544-244bd1355b6c: Home # Home
     ae42f0ac-b0aa-47e7-9c71-cc48dd052594: 'Basic Page' # Basic Page
     b0f0711a-19da-4978-aa0d-b35e95cc0975: 'Body Text' # Body Text
+    b3e00c20-78de-4496-853f-f4ca67a063b7: Link # Link
     be0d1ca8-c22c-4404-9565-2356c6520f02: 'Page Builder' # Page Builder
     c872b290-9313-4f28-acd2-925457a79e5d: 'Markets Index' # Markets Index
-    cb5a6909-604b-4ccf-b8dd-9caa32732c44: Venues # Venues
     db8196f1-344f-4ba0-86ab-bd52b54b7900: 'Home Page' # Home Page
-    dc6e1286-746c-4112-b261-a04d4ebbf6d9: Venue # Venue
     e19d1e17-c887-42cd-9b66-14558456cc62: Eyebrow # Eyebrow
     ea99dddb-ae92-4c61-a446-127f44033c56: Market # Market
     eb47da8d-287d-4d74-97d8-59ff69eaa2e6: 'Contact Page' # Contact Page

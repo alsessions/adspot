@@ -1,0 +1,26 @@
+columnSuffix: null
+handle: advertiserGrid
+instructions: null
+name: Grid
+searchable: false
+settings:
+  createButtonLabel: 'Add grid item'
+  defaultIndexViewMode: cards
+  enableVersioning: false
+  entryTypes:
+    -
+      __assoc__:
+        -
+          - uid
+          - 40bcc602-c1e4-4df5-9a5b-b88638466b68 # Grid Item
+  includeTableView: false
+  maxEntries: null
+  minEntries: null
+  pageSize: null
+  propagationKeyFormat: null
+  propagationMethod: all
+  showCardsInGrid: false
+  viewMode: blocks
+translationKeyFormat: null
+translationMethod: site
+type: craft\fields\Matrix

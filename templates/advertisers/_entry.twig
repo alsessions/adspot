@@ -1,8 +1,0 @@
-{% extends '_layouts/_page.twig' %}
-
-{% block title %}{{ entry.title }} | AdSpot{% endblock %}
-{% block description %}{{ entry.bodyText ? entry.bodyText|striptags|truncate(160) : 'An advertiser working with AdSpot.' }}{% endblock %}
-
-{% block content %}
-    {% include '_partials/_entry-content.twig' with { entry: entry } only %}
-{% endblock %}

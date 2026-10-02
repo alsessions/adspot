@@ -64,6 +64,23 @@ fieldLayouts:
             editCondition: null
             elementCondition: null
             elementEditCondition: null
+            fieldUid: 642b551f-79c0-4ce6-afac-2db5a3f2761a # Page Image
+            handle: null
+            instructions: 'Full-width hero background. Use a wide landscape image.'
+            label: 'Hero Image'
+            oldFieldUid: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: b20ef229-1dc3-470e-bc4c-777e56c070ff
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            dateAdded: null
+            editCondition: null
+            elementCondition: null
+            elementEditCondition: null
             fieldUid: 6e72687a-a30e-46cb-bd37-c39eece0b6d4 # Body Copy
             handle: null
             instructions: null
