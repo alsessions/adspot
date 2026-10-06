@@ -1,0 +1,26 @@
+{% set gridItems = entry.simpleGrid.all() %}
+
+{% if gridItems %}
+    <div class="mt-12 grid gap-5 md:grid-cols-2">
+        {% for item in gridItems %}
+            <article class="flex min-h-56 flex-col rounded-xl border border-white/10 bg-zinc-900 p-7 text-white">
+                <div class="flex items-center gap-4">
+                    <span class="flex size-11 shrink-0 items-center justify-center rounded-full bg-[#fce604] text-zinc-950">
+                        {% include '_partials/_heroicon.twig' with { name: item.gridIcon.value } only %}
+                    </span>
+                    <h2 class="text-xl font-bold tracking-[-0.03em]">{{ item.heading }}</h2>
+                </div>
+
+                {% if item.body %}
+                    <div class="prose prose-invert mt-6 max-w-none text-zinc-300 prose-a:text-yellow-300 prose-a:hover:text-white">{{ item.body }}</div>
+                {% endif %}
+
+                {% if item.gridLink %}
+                    <a href="{{ item.gridLink.url }}" class="mt-auto pt-10 font-bold text-yellow-300 transition hover:text-white">
+                        {{ item.gridLink.label ?: 'Learn more' }} <span aria-hidden="true">→</span>
+                    </a>
+                {% endif %}
+            </article>
+        {% endfor %}
+    </div>
+{% endif %}

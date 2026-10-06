@@ -16,7 +16,8 @@ class m261002_220000_move_advertiser_grid_to_global extends Migration
     public function safeUp(): bool
     {
         $global = Craft::$app->getGlobals()->getSetByHandle('grid');
-        $field = Craft::$app->getFields()->getFieldByHandle('advertiserGrid');
+        $field = Craft::$app->getFields()->getFieldByHandle('simpleGrid')
+            ?? Craft::$app->getFields()->getFieldByHandle('advertiserGrid');
         $source = Entry::find()
             ->section('advertisersIndex')
             ->status(null)
@@ -28,7 +29,11 @@ class m261002_220000_move_advertiser_grid_to_global extends Migration
             throw new RuntimeException('The Grid global set, Grid field, or Advertisers index is missing.');
         }
 
-        $grid = $global->getFieldValue('advertiserGrid');
+        if (!$global->getFieldLayout()->isFieldIncluded($field->handle)) {
+            return true;
+        }
+
+        $grid = $global->getFieldValue($field->handle);
 
         if ($grid->exists()) {
             return true;
@@ -61,7 +66,7 @@ class m261002_220000_move_advertiser_grid_to_global extends Migration
         }
 
         $grid->setCachedResult($items);
-        $global->setFieldValue('advertiserGrid', $grid);
+        $global->setFieldValue($field->handle, $grid);
 
         if (!Craft::$app->getElements()->saveElement($global)) {
             throw new RuntimeException('Unable to save the global Grid: ' . implode(', ', $global->getErrorSummary(true)));

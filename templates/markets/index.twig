@@ -27,6 +27,11 @@
         {% if not indexImage %}
             <h1 class="mt-4 text-5xl font-black tracking-[-0.05em] uppercase sm:text-7xl">{{ entry.title }}</h1>
         {% endif %}
+        {% if entry.bodyText %}
+            <div class="prose prose-lg prose-zinc mt-8 max-w-3xl">{{ entry.bodyText }}</div>
+        {% endif %}
+
+        {% include '_partials/_simple-grid.twig' %}
     </section>
 
     {% include 'search/_form.twig' %}

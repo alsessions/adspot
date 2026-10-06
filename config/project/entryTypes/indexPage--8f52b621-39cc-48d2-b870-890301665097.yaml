@@ -83,6 +83,8 @@ fieldLayouts:
               uid: 29632f13-4dfa-434a-8300-5e0d42419571
               values:
                 - 45c9bc75-0732-482e-8a28-49b55e6efc6e # Advertisers Index
+                - 1bbf2698-253c-4804-88a0-447e698c608c # Venues Index
+                - c872b290-9313-4f28-acd2-925457a79e5d # Markets Index
           elementType: null
           fieldContext: global
         elements:
@@ -91,7 +93,7 @@ fieldLayouts:
             editCondition: null
             elementCondition: null
             elementEditCondition: null
-            fieldUid: 43685cdd-cfb6-48c5-b3b8-2b11def1ad07 # Grid
+            fieldUid: 43685cdd-cfb6-48c5-b3b8-2b11def1ad07 # Simple Grid
             handle: null
             instructions: null
             label: null
@@ -103,7 +105,7 @@ fieldLayouts:
             userCondition: null
             warning: null
             width: 100
-        name: 'Advertiser Grid'
+        name: 'Simple Grid'
         uid: 0d81d02c-1ad1-47b4-ad67-36a6657e050f
         userCondition: null
     thumbFieldKey: null

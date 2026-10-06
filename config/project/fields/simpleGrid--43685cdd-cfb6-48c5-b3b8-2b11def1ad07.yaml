@@ -1,7 +1,7 @@
 columnSuffix: null
-handle: advertiserGrid
+handle: simpleGrid
 instructions: null
-name: Grid
+name: 'Simple Grid'
 searchable: false
 settings:
   createButtonLabel: 'Add grid item'

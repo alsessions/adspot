@@ -22,9 +22,13 @@
         {% if not indexImage %}
             <h1 class="mt-4 text-5xl font-black tracking-[-0.05em] uppercase sm:text-7xl">{{ entry.title }}</h1>
         {% endif %}
-        <p class="mt-8 max-w-2xl text-xl leading-relaxed">Explore AdSpot venues by market and find opportunities across New York State.</p>
+        {% if entry.bodyText %}
+            <div class="prose prose-lg prose-zinc mt-8 max-w-3xl">{{ entry.bodyText }}</div>
+        {% endif %}
         <a href="{{ siteUrl('markets') }}" class="mt-8 inline-flex items-center gap-3 rounded-sm bg-yellow-300 px-7 py-4 font-bold text-zinc-950 transition hover:bg-zinc-950 hover:text-yellow-300">
             Browse markets <span aria-hidden="true">→</span>
         </a>
+
+        {% include '_partials/_simple-grid.twig' %}
     </section>
 {% endblock %}

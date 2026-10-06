@@ -22,13 +22,14 @@ class m261006_150000_move_advertiser_grid_to_index extends Migration
             ->revisions(false)
             ->one();
         $global = Craft::$app->getGlobals()->getSetByHandle('grid');
-        $field = Craft::$app->getFields()->getFieldByHandle('advertiserGrid');
+        $field = Craft::$app->getFields()->getFieldByHandle('simpleGrid')
+            ?? Craft::$app->getFields()->getFieldByHandle('advertiserGrid');
 
         if (!$entry || !$global || !$field) {
-            throw new RuntimeException('The Advertisers index, Grid global set, or advertiserGrid field is missing.');
+            throw new RuntimeException('The Advertisers index, Grid global set, or simpleGrid field is missing.');
         }
 
-        $grid = $entry->getFieldValue('advertiserGrid');
+        $grid = $entry->getFieldValue($field->handle);
 
         if ($grid->exists()) {
             return true;
@@ -61,7 +62,7 @@ class m261006_150000_move_advertiser_grid_to_index extends Migration
         }
 
         $grid->setCachedResult($items);
-        $entry->setFieldValue('advertiserGrid', $grid);
+        $entry->setFieldValue($field->handle, $grid);
 
         if (!Craft::$app->getElements()->saveElement($entry)) {
             throw new RuntimeException('Unable to save the advertiser grid: ' . implode(', ', $entry->getErrorSummary(true)));
