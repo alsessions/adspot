@@ -1,10 +1,10 @@
 columnSuffix: null
-handle: homeContent
-instructions: 'Add the three steps shown in the How It Works section.'
-name: 'How It Works'
+handle: homeLogos
+instructions: 'Add logos in the order they should appear on the homepage.'
+name: 'Home Logos'
 searchable: false
 settings:
-  createButtonLabel: 'Add step'
+  createButtonLabel: 'Add logo'
   defaultIndexViewMode: cards
   enableVersioning: true
   entryTypes:
@@ -12,10 +12,10 @@ settings:
       __assoc__:
         -
           - uid
-          - 4d51049d-7ebc-4158-9ca5-4ca8dfad73a8 # How It Works Step
+          - 6fea538f-dbb9-499f-8901-8d59d0815125 # Home Logo
   includeTableView: false
-  maxEntries: 3
-  minEntries: 3
+  maxEntries: null
+  minEntries: null
   pageSize: null
   propagationKeyFormat: null
   propagationMethod: all

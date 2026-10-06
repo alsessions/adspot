@@ -2,7 +2,7 @@ allowLineBreaksInTitles: false
 color: null
 description: null
 fieldLayouts:
-  dc94ff99-3bba-4564-a499-db632c813a1b:
+  b9ca62ea-4b67-4153-a5f1-584ccfe11c45:
     cardThumbAlignment: end
     tabs:
       -
@@ -15,13 +15,13 @@ fieldLayouts:
             elementEditCondition: null
             fieldUid: e19d1e17-c887-42cd-9b66-14558456cc62 # Eyebrow
             handle: null
-            instructions: null
-            label: null
+            instructions: 'For example, Step 1.'
+            label: 'Step Label'
             oldFieldUid: null
             required: true
             tip: null
             type: craft\fieldlayoutelements\CustomField
-            uid: 2e518d1e-9447-421f-8df9-70ba5119c970
+            uid: 010c6b3c-635c-4cfd-ae4f-c71d76c3761f
             userCondition: null
             warning: null
             width: 100
@@ -33,12 +33,12 @@ fieldLayouts:
             fieldUid: 7ac39a8f-9250-4234-acfc-12fc4642e5cb # Heading
             handle: null
             instructions: null
-            label: null
+            label: 'Step Heading'
             oldFieldUid: null
             required: true
             tip: null
             type: craft\fieldlayoutelements\CustomField
-            uid: 5a34577d-27b0-43ac-971e-cb1c1886b652
+            uid: c16c84e6-a0ab-4b85-8ef6-aa8641639184
             userCondition: null
             warning: null
             width: 100
@@ -50,28 +50,28 @@ fieldLayouts:
             fieldUid: 6e72687a-a30e-46cb-bd37-c39eece0b6d4 # Body Copy
             handle: null
             instructions: null
-            label: null
+            label: 'Step Copy'
             oldFieldUid: null
             required: true
             tip: null
             type: craft\fieldlayoutelements\CustomField
-            uid: 962304c6-88ce-424c-8ca9-e9e6c1c6bdf9
+            uid: db9e3e78-ae98-4d8f-b222-c5016fcf1e5b
             userCondition: null
             warning: null
             width: 100
-        name: Content
-        uid: 4b41a6fa-be67-47e5-9b98-c4618547c8e1
+        name: Step
+        uid: 5dc6df47-7748-4fb4-b76a-8cf67a1c1cfd
         userCondition: null
     thumbFieldKey: null
-handle: contentSection
+handle: howItWorksStep
 hasTitleField: false
 icon: null
-name: 'Content Section'
+name: 'How It Works Step'
 showSlugField: false
 showStatusField: false
 slugTranslationKeyFormat: null
 slugTranslationMethod: site
-titleFormat: '{heading}'
+titleFormat: '{eyebrow}: {heading}'
 titleTranslationKeyFormat: null
 titleTranslationMethod: site
-uiLabelFormat: '{heading}'
+uiLabelFormat: '{eyebrow}: {heading}'

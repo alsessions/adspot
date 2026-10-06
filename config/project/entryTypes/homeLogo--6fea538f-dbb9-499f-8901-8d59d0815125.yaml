@@ -1,0 +1,43 @@
+allowLineBreaksInTitles: false
+color: null
+description: null
+fieldLayouts:
+  b9f28432-1018-4da8-8f8c-aa2e72673d13:
+    cardThumbAlignment: end
+    tabs:
+      -
+        elementCondition: null
+        elements:
+          -
+            dateAdded: null
+            editCondition: null
+            elementCondition: null
+            elementEditCondition: null
+            fieldUid: 8e23cea5-f0cd-4ab9-844b-cbeeeb122558 # Logo Image
+            handle: null
+            instructions: null
+            label: null
+            oldFieldUid: null
+            required: true
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 7cbc0db2-02d0-408f-8bbb-0eb6939e1265
+            userCondition: null
+            warning: null
+            width: 100
+        name: Logo
+        uid: 64d138bb-9cd6-4ba3-bc58-fc99a1daf909
+        userCondition: null
+    thumbFieldKey: 'field:8e23cea5-f0cd-4ab9-844b-cbeeeb122558' # Logo Image
+handle: homeLogo
+hasTitleField: false
+icon: null
+name: 'Home Logo'
+showSlugField: false
+showStatusField: false
+slugTranslationKeyFormat: null
+slugTranslationMethod: site
+titleFormat: Logo
+titleTranslationKeyFormat: null
+titleTranslationMethod: site
+uiLabelFormat: Logo

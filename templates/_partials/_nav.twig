@@ -1,24 +1,36 @@
-<header class="border-b-2 border-zinc-950 bg-[#fce604]">
-    <div class="mx-auto flex max-w-[1400px] flex-wrap items-center justify-between gap-4 px-6 py-6 lg:px-10">
-        <a href="{{ siteUrl }}">
+<header class="border-b-2 border-zinc-950 bg-[#fce604]" x-data="{ menuOpen: false }" @keydown.escape.window="menuOpen = false">
+    <div class="mx-auto max-w-[1400px] px-6 py-6 lg:px-10">
+        <div class="flex items-center justify-between gap-4">
+            <a href="{{ siteUrl }}">
             <img src="{{ craft.assets().volume('photos').filename('adspot-logo.png').one().getUrl({ width: 320, height: 128, mode: 'crop' }) }}" alt="AdSpot Advertising Solutions" width="160" height="64" class="h-16 w-40 object-contain">
-        </a>
-        <nav class="flex flex-wrap items-center gap-6" aria-label="Primary navigation">
-            <a href="{{ siteUrl('advertisers') }}" class="font-semibold text-zinc-950 hover:underline">
-                Advertisers
             </a>
-            <a href="{{ siteUrl('venues') }}" class="font-semibold text-zinc-950 hover:underline">
-                Venues
-            </a>
-            <a href="{{ siteUrl('markets') }}" class="font-semibold text-zinc-950 hover:underline">
-                Markets
-            </a>
-            <a href="{{ siteUrl('blog') }}" class="font-semibold text-zinc-950 hover:underline">
-                Blog
-            </a>
-            <a href="{{ siteUrl('contact') }}" class="font-semibold text-zinc-950 hover:underline">
-                Contact
-            </a>
+
+            <button type="button" class="inline-flex size-12 items-center justify-center text-zinc-950 md:hidden" @click="menuOpen = !menuOpen" :aria-expanded="menuOpen" aria-controls="mobile-navigation" aria-label="Toggle navigation">
+                <svg x-show="!menuOpen" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="size-8" aria-hidden="true">
+                    <path stroke-linecap="round" d="M4 6h16M4 12h16M4 18h16"/>
+                </svg>
+                <svg x-show="menuOpen" style="display: none;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="size-8" aria-hidden="true">
+                    <path stroke-linecap="round" d="M6 6l12 12M18 6 6 18"/>
+                </svg>
+            </button>
+
+            <nav class="hidden items-center gap-6 md:flex" aria-label="Primary navigation">
+                <a href="{{ siteUrl('advertisers') }}" class="font-semibold text-zinc-950 hover:font-bold">Advertisers</a>
+                <a href="{{ siteUrl('venues') }}" class="font-semibold text-zinc-950 hover:font-bold">Venues</a>
+                <a href="{{ siteUrl('markets') }}" class="font-semibold text-zinc-950 hover:font-bold">Markets</a>
+                <a href="{{ siteUrl('blog') }}" class="font-semibold text-zinc-950 hover:font-bold">Blog</a>
+                <a href="{{ siteUrl('contact') }}" class="font-semibold text-zinc-950 hover:font-bold">Contact</a>
+            </nav>
+        </div>
+
+        <nav id="mobile-navigation" x-show="menuOpen" style="display: none;" x-transition class="mt-6 border-t-2 border-zinc-950 py-4 md:hidden" aria-label="Mobile navigation" @click.outside="menuOpen = false">
+            <div class="flex flex-col">
+                <a href="{{ siteUrl('advertisers') }}" class="py-3 text-lg font-semibold text-zinc-950">Advertisers</a>
+                <a href="{{ siteUrl('venues') }}" class="py-3 text-lg font-semibold text-zinc-950">Venues</a>
+                <a href="{{ siteUrl('markets') }}" class="py-3 text-lg font-semibold text-zinc-950">Markets</a>
+                <a href="{{ siteUrl('blog') }}" class="py-3 text-lg font-semibold text-zinc-950">Blog</a>
+                <a href="{{ siteUrl('contact') }}" class="py-3 text-lg font-semibold text-zinc-950">Contact</a>
+            </div>
         </nav>
     </div>
 </header>

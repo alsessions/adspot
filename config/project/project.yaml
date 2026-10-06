@@ -1,4 +1,4 @@
-dateModified: 1790979098
+dateModified: 1791312133
 email:
   fromEmail: admin@adspot.test
   fromName: adspot
@@ -17,10 +17,13 @@ meta:
     1aa27084-e5b3-4cb6-8115-d05f4bdb10ca: 'Secondary CTA' # Secondary CTA
     1bbf2698-253c-4804-88a0-447e698c608c: 'Venues Index' # Venues Index
     1bf351c9-0ceb-4394-bd5b-ab17d133083f: Blog # Blog
-    4d51049d-7ebc-4158-9ca5-4ca8dfad73a8: 'Content Section' # Content Section
+    4d51049d-7ebc-4158-9ca5-4ca8dfad73a8: 'How It Works Step' # How It Works Step
     6e5dd686-3133-43ce-ab8e-440d75b33de4: Blog # Blog
     6e72687a-a30e-46cb-bd37-c39eece0b6d4: 'Body Copy' # Body Copy
+    6f49a969-8917-4d80-8739-5d23e549e048: 'Home Logos' # Home Logos
+    6fea538f-dbb9-499f-8901-8d59d0815125: 'Home Logo' # Home Logo
     7ac39a8f-9250-4234-acfc-12fc4642e5cb: Heading # Heading
+    8e23cea5-f0cd-4ab9-844b-cbeeeb122558: 'Logo Image' # Logo Image
     8f52b621-39cc-48d2-b870-890301665097: 'Index Page' # Index Page
     40bcc602-c1e4-4df5-9a5b-b88638466b68: 'Grid Item' # Grid Item
     43f4f99f-df7a-4b4b-9b73-6631202cb847: 'Index Image' # Index Image
@@ -40,7 +43,7 @@ meta:
     57893d02-3fec-449e-a138-957e9323d2a1: Photos # Photos
     77114ba1-ed67-47c2-8248-0eca5c805ac8: 'Primary CTA Label' # Primary CTA Label
     497175e2-bed5-41f2-932e-c59e2d318201: Icon # Icon
-    1072069c-d1cc-4ae6-8b0e-7bde0ef111e4: Sections # Sections
+    1072069c-d1cc-4ae6-8b0e-7bde0ef111e4: 'How It Works' # How It Works
     a966887e-bf86-4f91-a544-244bd1355b6c: Home # Home
     ae42f0ac-b0aa-47e7-9c71-cc48dd052594: 'Basic Page' # Basic Page
     b0f0711a-19da-4978-aa0d-b35e95cc0975: 'Body Text' # Body Text
