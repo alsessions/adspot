@@ -5,7 +5,7 @@
 
 {% block content %}
     {% set indexImage = entry.indexImage.kind('image').one() %}
-    {% set gridItems = grid.advertiserGrid.all() %}
+    {% set gridItems = entry.advertiserGrid.all() %}
 
     {% if indexImage %}
         <figure class="relative w-full overflow-hidden">
@@ -24,12 +24,18 @@
             <h1 class="mt-4 text-5xl font-black tracking-[-0.05em] uppercase sm:text-7xl">{{ entry.title }}</h1>
         {% endif %}
 
+        {% if entry.bodyText %}
+            <div class="prose prose-lg prose-zinc mt-8 max-w-3xl">{{ entry.bodyText }}</div>
+        {% endif %}
+
         {% if gridItems %}
             <div class="mt-12 grid gap-5 md:grid-cols-2">
                 {% for item in gridItems %}
                     <article class="flex min-h-56 flex-col rounded-xl border border-white/10 bg-zinc-900 p-7 text-white">
                         <div class="flex items-center gap-4">
-                            <span class="rounded-full bg-yellow-300 px-3 py-1 text-xs font-bold tracking-wide text-zinc-950 uppercase">{{ item.gridIcon.label }}</span>
+                            <span class="flex size-11 shrink-0 items-center justify-center rounded-full bg-[#fce604] text-zinc-950">
+                                {% include '_partials/_heroicon.twig' with { name: item.gridIcon.value } only %}
+                            </span>
                             <h2 class="text-xl font-bold tracking-[-0.03em]">{{ item.heading }}</h2>
                         </div>
 

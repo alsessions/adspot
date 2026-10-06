@@ -53,8 +53,58 @@ fieldLayouts:
             userCondition: null
             warning: null
             width: 100
+          -
+            dateAdded: '2026-10-06T22:12:12+00:00'
+            editCondition: null
+            elementCondition: null
+            elementEditCondition: null
+            fieldUid: b0f0711a-19da-4978-aa0d-b35e95cc0975 # Body Text
+            handle: null
+            instructions: null
+            label: null
+            oldFieldUid: b0f0711a-19da-4978-aa0d-b35e95cc0975 # Body Text
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: b82edbf3-bc80-47b7-92ac-cfb1c542c5f4
+            userCondition: null
+            warning: null
+            width: 100
         name: Content
         uid: e0b08c73-6245-447a-bac7-1b68557a1f74
+        userCondition: null
+      -
+        elementCondition:
+          class: craft\elements\conditions\entries\EntryCondition
+          conditionRules:
+            -
+              class: craft\elements\conditions\entries\SectionConditionRule
+              operator: in
+              uid: 29632f13-4dfa-434a-8300-5e0d42419571
+              values:
+                - 45c9bc75-0732-482e-8a28-49b55e6efc6e # Advertisers Index
+          elementType: null
+          fieldContext: global
+        elements:
+          -
+            dateAdded: '2026-10-06T22:09:33+00:00'
+            editCondition: null
+            elementCondition: null
+            elementEditCondition: null
+            fieldUid: 43685cdd-cfb6-48c5-b3b8-2b11def1ad07 # Grid
+            handle: null
+            instructions: null
+            label: null
+            oldFieldUid: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 6dbe21f6-e58d-4992-a9f0-cb9ba85d6e52
+            userCondition: null
+            warning: null
+            width: 100
+        name: 'Advertiser Grid'
+        uid: 0d81d02c-1ad1-47b4-ad67-36a6657e050f
         userCondition: null
     thumbFieldKey: null
 handle: indexPage
