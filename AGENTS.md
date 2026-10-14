@@ -10,7 +10,7 @@
 
 ## Craft Plugins
 
-- CKEditor (`craftcms/ckeditor`) for rich-text fields such as `body` and `bodyText`
+- CKEditor (`craftcms/ckeditor`) for rich-text fields such as `body` and `bodyText`; `bodyText` supports inline images through the `pageImages` field
 - Contact Form (`craftcms/contact-form`) for the site contact form
 - Google Maps (`doublesecretagency/craft-googlemaps`) for market addresses and maps
 - Expanded Singles (`verbb/expanded-singles`) for easier Single-section editing
@@ -37,15 +37,29 @@ This project does not use Formie. Google Maps browser and server keys come from 
 - Do not edit Craft content tables directly except for read-only diagnostics. Use Craft element APIs in migrations.
 - Check the actual field handle and entry-type layout before changing templates.
 
-The `indexPage` entry type is shared by the Advertisers, Venues, Markets, and Blog index Singles. `bodyText` is optional. `simpleGrid` is optional and conditionally shown only for the Advertisers, Venues, and Markets indexes.
+The shared `page` entry type is used by basic pages, blog posts, Contact, and the Advertisers, Venues, Markets, and Blog index Singles. It has `indexImage` for the hero and an ordered `pageContent` Matrix field. Do not restore the retired `pageBuilder`, `contactPage`, `indexPage`, or Blog entry types.
+
+`pageContent` supports these blocks:
+
+- Body Text (`bodyTextBlock`) containing the `bodyText` CKEditor field
+- Body Image (`bodyImage`) containing the single-asset `pageImages` field
+- Simple Grid (`simpleGridBlock`) containing the nested `simpleGrid` Matrix field
+
+Editors can arrange Body Text, Body Image, and Simple Grid blocks in any order. `simpleGrid` contains `featureCard` entries. CKEditor can also place Body Image entries inline within `bodyText`.
+
+The `market` entry type remains separate and continues to use `pageImage`, `bodyText`, `address`, and the existing Market templates. Do not move Market detail content into `pageContent`.
 
 The Home Single uses its own `homePage` entry type. Its `homeContent` and `homeLogos` Matrix fields are limited by their configured layouts and should remain editable through Craft.
+
+The Page consolidation and content transformation are handled by the `m261013_120000`, `m261013_121000`, and `m261013_130000` content migrations. Keep them idempotent and compatible with project config being applied before content migrations.
 
 ## Templates and Frontend
 
 - Shared page templates extend `templates/_layouts/_page.twig`.
 - The homepage at `templates/index.twig` is currently a standalone document and must receive shared head-level changes separately.
 - Keep reusable site fragments in `templates/_partials/` when they are used by multiple templates.
+- Render ordered Page blocks through `templates/_partials/_page-content.twig`. `templates/_partials/_entry-content.twig` handles both Page entries and the unchanged Market fields.
+- The footer shows a small `Edit Page` link only when `currentUser` is logged in and the current `entry` has a control-panel edit URL. The site uses Craft Solo and assumes one editor.
 - Prefer native Twig, Craft queries, Alpine.js, and inline Tailwind utilities over new abstractions or dependencies.
 - Alpine is loaded with `defer`; use accessible state, keyboard behavior, and ARIA attributes for interactive controls.
 - Heroicons are rendered as inline SVGs through `_partials/_heroicon.twig`; no Heroicons JavaScript package is installed.
@@ -71,8 +85,10 @@ The Home Single uses its own `homePage` entry type. Its `homeContent` and `homeL
 
 - Commit and push templates, project config, migrations, Composer lock changes, source assets, and the compiled `web/css/app.css` before deploying.
 - `deploy.sh` pulls `main`, installs production Composer dependencies, runs `php craft up --interactive=0`, and clears Craft caches.
+- Both the deployment user and PHP process must be able to write to `storage/` and `web/cpresources/`; otherwise `craft up` can fail while compiling nested-entry title templates.
 - Sync the `web/photos/` volume separately.
-- A local database import is acceptable for the initial launch after taking a backup and enabling maintenance mode.
+- A local database import is acceptable for the initial launch when the local content should replace production. Back up production, enable maintenance mode, import the database, deploy the matching code and project config, sync `web/photos/`, run `php craft up --interactive=0`, clear caches, verify the site, and then disable maintenance mode.
+- An imported local database already contains the applied content-migration records and migrated Page content; `craft up` should not rerun those migrations.
 - Do not routinely import a local database after production content editing begins; deploy code, project config, and migrations instead.
 - Keep production `.env` values on the server and confirm `PRIMARY_SITE_URL`, database credentials, security key, and Google Maps keys are correct.
 
