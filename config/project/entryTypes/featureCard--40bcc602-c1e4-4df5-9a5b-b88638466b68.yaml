@@ -80,10 +80,10 @@ fieldLayouts:
         uid: 3b239d1d-f5b5-473b-8860-3bef5fbbe42c
         userCondition: null
     thumbFieldKey: null
-handle: gridItem
+handle: featureCard
 hasTitleField: false
 icon: null
-name: 'Grid Item'
+name: 'Feature Card'
 showSlugField: false
 showStatusField: false
 slugTranslationKeyFormat: null

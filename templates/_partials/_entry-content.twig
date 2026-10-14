@@ -1,4 +1,6 @@
-{% set heroImage = entry.pageImage.kind('image').one() %}
+{% if heroImage is not defined %}
+    {% set heroImage = entry.pageImage.kind('image').one() %}
+{% endif %}
 
 {% if heroImage %}
     <figure class="relative w-full overflow-hidden">
@@ -16,7 +18,9 @@
         <h1 class="text-5xl font-black tracking-[-0.05em] uppercase sm:text-7xl">{{ entry.title }}</h1>
     {% endif %}
 
-    {% if entry.bodyText %}
+    {% if entry.type.handle == 'page' %}
+        {% include '_partials/_page-content.twig' with { entry: entry, heroImage: heroImage, prose: prose|default(false) } only %}
+    {% elseif entry.bodyText %}
         <div class="{{ heroImage ? '' : 'mt-8' }} {{ prose|default(false) ? 'prose prose-lg prose-zinc' : 'max-w-3xl whitespace-pre-line text-lg leading-relaxed' }}">{{ entry.bodyText }}</div>
     {% endif %}
 </section>

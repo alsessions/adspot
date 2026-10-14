@@ -1,0 +1,43 @@
+allowLineBreaksInTitles: false
+color: null
+description: null
+fieldLayouts:
+  1d15a4ca-449e-4a1f-a36d-727fc2df721e:
+    cardThumbAlignment: end
+    tabs:
+      -
+        elementCondition: null
+        elements:
+          -
+            dateAdded: '2026-10-13T00:00:00+00:00'
+            editCondition: null
+            elementCondition: null
+            elementEditCondition: null
+            fieldUid: 43685cdd-cfb6-48c5-b3b8-2b11def1ad07 # Simple Grid
+            handle: null
+            instructions: null
+            label: null
+            oldFieldUid: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 72cef7ba-8f36-473b-8e9e-0f3f300cd9c8
+            userCondition: null
+            warning: null
+            width: 100
+        name: Content
+        uid: b0a9ea58-09f6-4162-9f2d-50889dd75326
+        userCondition: null
+    thumbFieldKey: null
+handle: simpleGridBlock
+hasTitleField: false
+icon: null
+name: 'Simple Grid'
+showSlugField: false
+showStatusField: false
+slugTranslationKeyFormat: null
+slugTranslationMethod: site
+titleFormat: Grid
+titleTranslationKeyFormat: null
+titleTranslationMethod: site
+uiLabelFormat: Grid

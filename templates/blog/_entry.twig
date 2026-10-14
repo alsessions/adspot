@@ -1,8 +1,10 @@
 {% extends '_layouts/_page.twig' %}
 
+{% set summary = entry.pageContent.type('bodyTextBlock').one() %}
+
 {% block title %}{{ entry.title }} | AdSpot{% endblock %}
-{% block description %}{{ entry.bodyText ? entry.bodyText|striptags|truncate(160) : 'News and updates from AdSpot.' }}{% endblock %}
+{% block description %}{{ summary and summary.bodyText ? summary.bodyText|striptags|truncate(160) : 'News and updates from AdSpot.' }}{% endblock %}
 
 {% block content %}
-    {% include '_partials/_entry-content.twig' with { entry: entry, prose: true } only %}
+    {% include '_partials/_entry-content.twig' with { entry: entry, heroImage: entry.indexImage.kind('image').one(), prose: true } only %}
 {% endblock %}

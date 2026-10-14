@@ -1,0 +1,36 @@
+columnSuffix: null
+handle: pageContent
+instructions: null
+name: 'Page Content'
+searchable: false
+settings:
+  createButtonLabel: 'Add content'
+  defaultIndexViewMode: cards
+  enableVersioning: false
+  entryTypes:
+    -
+      __assoc__:
+        -
+          - uid
+          - 2d706e51-2d3a-421d-b267-9e9e8913b8c4 # Body Text
+    -
+      __assoc__:
+        -
+          - uid
+          - 878f0e81-00e1-467a-91e0-ca1d69ac94f6 # Body Image
+    -
+      __assoc__:
+        -
+          - uid
+          - 26e7d437-2f89-46d4-ab52-13599ec1713e # Simple Grid
+  includeTableView: false
+  maxEntries: null
+  minEntries: null
+  pageSize: null
+  propagationKeyFormat: null
+  propagationMethod: all
+  showCardsInGrid: false
+  viewMode: blocks
+translationKeyFormat: null
+translationMethod: site
+type: craft\fields\Matrix

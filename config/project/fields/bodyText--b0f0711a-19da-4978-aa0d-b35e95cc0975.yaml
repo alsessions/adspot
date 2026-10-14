@@ -18,7 +18,7 @@ settings:
       __assoc__:
         -
           - uid
-          - be0d1ca8-c22c-4404-9565-2356c6520f02 # Page Builder
+          - 878f0e81-00e1-467a-91e0-ca1d69ac94f6 # Body Image
         -
           - expanded
           - false
@@ -30,8 +30,8 @@ settings:
     - '4'
     - '5'
     - '6'
-  imageEntryTypeUid: be0d1ca8-c22c-4404-9565-2356c6520f02 # Page Builder
-  imageFieldUid: 9e747d9f-8c23-47e9-9a5f-b3a7b2acff5a
+  imageEntryTypeUid: 878f0e81-00e1-467a-91e0-ca1d69ac94f6 # Body Image
+  imageFieldUid: 6f7bedc3-f995-43e1-818a-e92c7157c27a
   imageMode: img
   js: null
   jsFile: null
@@ -50,6 +50,7 @@ settings:
     - bold
     - italic
     - link
+    - insertImage
   wordLimit: null
 translationKeyFormat: null
 translationMethod: none

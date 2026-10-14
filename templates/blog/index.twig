@@ -7,7 +7,6 @@
     {% set indexImage = entry.indexImage.kind('image').one() %}
     {% set posts = craft.entries()
         .section('blog')
-        .type('pageBuilder')
         .orderBy('postDate desc')
         .all() %}
 
@@ -28,10 +27,13 @@
             <h1 class="mt-4 text-5xl font-black tracking-[-0.05em] uppercase sm:text-7xl">{{ entry.title }}</h1>
         {% endif %}
 
+        {% include '_partials/_page-content.twig' with { entry: entry, heroImage: indexImage, prose: true } only %}
+
         {% if posts %}
             <div class="mt-12">
                 {% for post in posts %}
-                    {% set cardImage = post.pageImage.kind('image').one() %}
+                    {% set cardImage = post.indexImage.kind('image').one() %}
+                    {% set summary = post.pageContent.type('bodyTextBlock').one() %}
                     {% if not loop.first %}
                         <hr class="my-10 border-t-2 border-zinc-950 md:my-14">
                     {% endif %}
@@ -43,8 +45,8 @@
                             <div>
                                 <time datetime="{{ post.postDate|date('Y-m-d') }}" class="text-sm font-semibold md:text-base">{{ post.postDate|date('F j, Y') }}</time>
                                 <h2 class="mt-2 text-3xl font-black tracking-[-0.04em] uppercase group-hover:underline md:text-4xl">{{ post.title }}</h2>
-                                {% if post.bodyText %}
-                                    <p class="mt-4 line-clamp-5 leading-relaxed md:text-lg">{{ post.bodyText|striptags|truncate(400) }}</p>
+                                {% if summary and summary.bodyText %}
+                                    <p class="mt-4 line-clamp-5 leading-relaxed md:text-lg">{{ summary.bodyText|striptags|truncate(400) }}</p>
                                 {% endif %}
                             </div>
                             <span class="mt-8 font-bold md:text-lg">Read article <span aria-hidden="true">→</span></span>

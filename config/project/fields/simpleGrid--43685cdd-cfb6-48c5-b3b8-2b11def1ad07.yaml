@@ -12,7 +12,7 @@ settings:
       __assoc__:
         -
           - uid
-          - 40bcc602-c1e4-4df5-9a5b-b88638466b68 # Grid Item
+          - 40bcc602-c1e4-4df5-9a5b-b88638466b68 # Feature Card
   includeTableView: false
   maxEntries: null
   minEntries: null

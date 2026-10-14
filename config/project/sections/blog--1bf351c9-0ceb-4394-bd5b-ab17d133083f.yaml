@@ -2,7 +2,7 @@ defaultPlacement: end
 enableVersioning: true
 entryTypes:
   -
-    uid: be0d1ca8-c22c-4404-9565-2356c6520f02 # Page Builder
+    uid: 8f52b621-39cc-48d2-b870-890301665097 # Page
 handle: blog
 maxAuthors: 1
 minAuthors: 1

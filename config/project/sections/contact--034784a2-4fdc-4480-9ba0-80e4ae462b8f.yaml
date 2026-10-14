@@ -2,7 +2,7 @@ defaultPlacement: end
 enableVersioning: true
 entryTypes:
   -
-    uid: eb47da8d-287d-4d74-97d8-59ff69eaa2e6 # Contact Page
+    uid: 8f52b621-39cc-48d2-b870-890301665097 # Page
 handle: contact
 maxAuthors: 1
 minAuthors: 1

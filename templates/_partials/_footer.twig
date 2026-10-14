@@ -40,5 +40,8 @@
 
     <div class="border-t border-gray-800 px-6 py-[10px] text-center">
         <p class="text-sm font-semibold">Copyright 2026 Ad Spot. All Rights Reserved <span aria-hidden="true">|</span> Privacy Policy</p>
+        {% if currentUser and entry is defined and entry.cpEditUrl %}
+            <a href="{{ entry.cpEditUrl }}" class="mt-1 inline-block text-xs underline underline-offset-2 hover:no-underline">Edit Page</a>
+        {% endif %}
     </div>
 </footer>

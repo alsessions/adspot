@@ -1,0 +1,23 @@
+{% set contentBlocks = entry.pageContent.all() %}
+
+{% for block in contentBlocks %}
+    {% set spacing = loop.first ? (heroImage|default(null) ? '' : 'mt-8') : 'mt-12' %}
+
+    {% switch block.type.handle %}
+        {% case 'bodyTextBlock' %}
+            {% if block.bodyText %}
+                <div class="{{ spacing }} {{ prose|default(false) ? 'prose prose-lg prose-zinc' : 'max-w-3xl whitespace-pre-line text-lg leading-relaxed' }}">{{ block.bodyText }}</div>
+            {% endif %}
+
+        {% case 'bodyImage' %}
+            {% set image = block.pageImages.kind('image').one() %}
+            {% if image %}
+                <figure class="{{ spacing }} max-w-5xl overflow-hidden rounded-xl">
+                    <img src="{{ image.getUrl('pageImage') }}" alt="{{ image.alt ?: entry.title }}" width="{{ image.getWidth('pageImage') }}" height="{{ image.getHeight('pageImage') }}" class="h-auto w-full object-cover" loading="lazy">
+                </figure>
+            {% endif %}
+
+        {% case 'simpleGridBlock' %}
+            {% include '_partials/_simple-grid.twig' with { entry: block, spacing: spacing } only %}
+    {% endswitch %}
+{% endfor %}

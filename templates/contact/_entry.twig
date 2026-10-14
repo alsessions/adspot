@@ -4,7 +4,7 @@
 {% block description %}Contact AdSpot about billboard advertising across New York State.{% endblock %}
 
 {% block content %}
-    {% include '_partials/_entry-content.twig' with { entry: entry } only %}
+    {% include '_partials/_entry-content.twig' with { entry: entry, heroImage: entry.indexImage.kind('image').one() } only %}
 
     <section class="mx-auto max-w-[1400px] px-6 pb-16 lg:px-10 lg:pb-24">
         <div class="max-w-3xl">
