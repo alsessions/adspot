@@ -1,4 +1,4 @@
-dateModified: 1791935626
+dateModified: 1792099419
 email:
   fromEmail: admin@adspot.test
   fromName: adspot
@@ -60,6 +60,18 @@ meta:
     f4366037-2a73-4bd6-a82c-2071d6f445a4: 'Blog Index' # Blog Index
     fc16afd7-8e46-4891-bb19-8bde45c06fe9: 'Heading Accent' # Heading Accent
 plugins:
+  blocksmith:
+    edition: lite
+    enabled: true
+    schemaVersion: 1.1.4
+    settings:
+      enableCardsSupport: true
+      previewImageSubfolder: null
+      previewImageVolume: null
+      previewStorageMode: null
+      useEntryTypeGroups: false
+      useHandleBasedPreviews: false
+      wideViewFourBlocks: false
   ckeditor:
     edition: standard
     enabled: true

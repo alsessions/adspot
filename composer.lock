@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "7dbdcb6ee7564b328b0ad6dd1a2af04c",
+    "content-hash": "690c642a9e845e87c4608c4b31f46760",
     "packages": [
         {
             "name": "bacon/bacon-qr-code",
@@ -2965,6 +2965,69 @@
                 "source": "https://github.com/Masterminds/html5-php/tree/2.11.0"
             },
             "time": "2026-08-18T06:18:41+00:00"
+        },
+        {
+            "name": "mediakreativ/craft-blocksmith",
+            "version": "1.7.9",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/mediakreativ/craft-blocksmith",
+                "reference": "94b9f8406df2945c8ff9d9094d1e0fff40172836"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/mediakreativ/craft-blocksmith/zipball/94b9f8406df2945c8ff9d9094d1e0fff40172836",
+                "reference": "94b9f8406df2945c8ff9d9094d1e0fff40172836",
+                "shasum": ""
+            },
+            "require": {
+                "craftcms/cms": "^5.0"
+            },
+            "type": "craft-plugin",
+            "extra": {
+                "name": "Blocksmith",
+                "class": "mediakreativ\\blocksmith\\Blocksmith",
+                "handle": "blocksmith",
+                "changelogUrl": "https://raw.githubusercontent.com/mediakreativ/craft-blocksmith/master/CHANGELOG.md",
+                "documentationUrl": "https://github.com/mediakreativ/craft-blocksmith"
+            },
+            "autoload": {
+                "psr-4": {
+                    "mediakreativ\\blocksmith\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "proprietary"
+            ],
+            "authors": [
+                {
+                    "name": "Christian Schindler",
+                    "homepage": "https://mediakreativ.de",
+                    "role": "Developer"
+                }
+            ],
+            "description": "Adds visual block selection for Matrix fields.",
+            "keywords": [
+                "Craft",
+                "block previews",
+                "button group",
+                "craftcms",
+                "matrix",
+                "matrix fields",
+                "modal",
+                "plugin",
+                "ui",
+                "ux"
+            ],
+            "support": {
+                "docs": "https://github.com/mediakreativ/craft-blocksmith",
+                "email": "plugins@mediakreativ.de",
+                "issues": "https://github.com/mediakreativ/craft-blocksmith/issues?state=open",
+                "rss": "https://github.com/mediakreativ/craft-blocksmith/releases.atom",
+                "source": "https://github.com/mediakreativ/craft-blocksmith"
+            },
+            "time": "2026-10-02T11:13:34+00:00"
         },
         {
             "name": "mikehaertl/php-shellcommand",

@@ -6,5 +6,5 @@
 {% block description %}{{ summary and summary.bodyText ? summary.bodyText|striptags|truncate(160) : 'News and updates from AdSpot.' }}{% endblock %}
 
 {% block content %}
-    {% include '_partials/_entry-content.twig' with { entry: entry, heroImage: entry.indexImage.kind('image').one(), prose: true } only %}
+    {% include '_partials/_entry-content.twig' with { entry: entry, heroImage: entry.indexImage.kind('image').one(), postDate: entry.postDate } only %}
 {% endblock %}

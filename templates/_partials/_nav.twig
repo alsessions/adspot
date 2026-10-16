@@ -1,3 +1,11 @@
+{% set navItems = {
+    advertisers: 'Advertisers',
+    venues: 'Venues',
+    markets: 'Markets',
+    blog: 'Blog',
+    contact: 'Contact',
+} %}
+
 <header class="border-b-2 border-zinc-950 bg-[#fce604]" x-data="{ menuOpen: false }" @keydown.escape.window="menuOpen = false">
     <div class="mx-auto max-w-[1400px] px-6 py-6 lg:px-10">
         <div class="flex items-center justify-between gap-4">
@@ -15,21 +23,17 @@
             </button>
 
             <nav class="hidden items-center gap-6 md:flex" aria-label="Primary navigation">
-                <a href="{{ siteUrl('advertisers') }}" class="font-semibold text-zinc-950 hover:font-bold">Advertisers</a>
-                <a href="{{ siteUrl('venues') }}" class="font-semibold text-zinc-950 hover:font-bold">Venues</a>
-                <a href="{{ siteUrl('markets') }}" class="font-semibold text-zinc-950 hover:font-bold">Markets</a>
-                <a href="{{ siteUrl('blog') }}" class="font-semibold text-zinc-950 hover:font-bold">Blog</a>
-                <a href="{{ siteUrl('contact') }}" class="font-semibold text-zinc-950 hover:font-bold">Contact</a>
+                {% for uri, label in navItems %}
+                    <a href="{{ siteUrl(uri) }}" class="border-b-3 border-transparent font-semibold text-zinc-950 active:border-white active:font-bold {{ craft.app.request.getSegment(1) == uri ? 'border-white font-bold' }}"{% if craft.app.request.getSegment(1) == uri %} aria-current="page"{% endif %}>{{ label }}</a>
+                {% endfor %}
             </nav>
         </div>
 
         <nav id="mobile-navigation" x-show="menuOpen" style="display: none;" x-transition class="mt-6 border-t-2 border-zinc-950 py-4 md:hidden" aria-label="Mobile navigation" @click.outside="menuOpen = false">
             <div class="flex flex-col">
-                <a href="{{ siteUrl('advertisers') }}" class="py-3 text-lg font-semibold text-zinc-950">Advertisers</a>
-                <a href="{{ siteUrl('venues') }}" class="py-3 text-lg font-semibold text-zinc-950">Venues</a>
-                <a href="{{ siteUrl('markets') }}" class="py-3 text-lg font-semibold text-zinc-950">Markets</a>
-                <a href="{{ siteUrl('blog') }}" class="py-3 text-lg font-semibold text-zinc-950">Blog</a>
-                <a href="{{ siteUrl('contact') }}" class="py-3 text-lg font-semibold text-zinc-950">Contact</a>
+                {% for uri, label in navItems %}
+                    <a href="{{ siteUrl(uri) }}" class="border-b-3 border-transparent py-3 text-lg font-semibold text-zinc-950 active:border-white active:font-bold {{ craft.app.request.getSegment(1) == uri ? 'border-white font-bold' }}"{% if craft.app.request.getSegment(1) == uri %} aria-current="page"{% endif %}>{{ label }}</a>
+                {% endfor %}
             </div>
         </nav>
     </div>

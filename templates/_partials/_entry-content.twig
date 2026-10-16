@@ -8,6 +8,9 @@
         <div class="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/70 to-transparent">
             <div class="mx-auto max-w-[1400px] px-6 pb-8 lg:px-10 lg:pb-12">
                 <h1 class="max-w-5xl text-5xl font-black tracking-[-0.05em] text-white uppercase sm:text-7xl">{{ entry.title }}</h1>
+                {% if postDate|default(null) %}
+                    <time datetime="{{ postDate|date('Y-m-d') }}" class="mt-3 block text-sm font-bold tracking-[0.18em] text-white/90 uppercase">{{ postDate|date('F j, Y') }}</time>
+                {% endif %}
             </div>
         </div>
     </figure>
@@ -16,11 +19,14 @@
 <section class="mx-auto max-w-[1400px] px-6 py-16 lg:px-10 lg:py-24">
     {% if not heroImage %}
         <h1 class="text-5xl font-black tracking-[-0.05em] uppercase sm:text-7xl">{{ entry.title }}</h1>
+        {% if postDate|default(null) %}
+            <time datetime="{{ postDate|date('Y-m-d') }}" class="mt-3 block text-sm font-bold tracking-[0.18em] text-zinc-950/60 uppercase">{{ postDate|date('F j, Y') }}</time>
+        {% endif %}
     {% endif %}
 
     {% if entry.type.handle == 'page' %}
-        {% include '_partials/_page-content.twig' with { entry: entry, heroImage: heroImage, prose: prose|default(false) } only %}
+        {% include '_partials/_page-content.twig' with { entry: entry, heroImage: heroImage } only %}
     {% elseif entry.bodyText %}
-        <div class="{{ heroImage ? '' : 'mt-8' }} {{ prose|default(false) ? 'prose prose-lg prose-zinc' : 'max-w-3xl whitespace-pre-line text-lg leading-relaxed' }}">{{ entry.bodyText }}</div>
+        <div class="{{ heroImage ? '' : 'mt-8' }} prose prose-xl prose-zinc max-w-4xl">{{ entry.bodyText }}</div>
     {% endif %}
 </section>

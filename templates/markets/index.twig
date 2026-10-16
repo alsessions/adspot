@@ -10,24 +10,12 @@
         .type('market')
         .orderBy('title asc')
         .all() %}
+    {% set marketFilterEnabled = false %} {# Set to true to restore the market filter. #}
 
-    {% if indexImage %}
-        <figure class="relative w-full overflow-hidden">
-            <img src="{{ indexImage.getUrl('pageImage') }}" alt="{{ indexImage.alt ?: entry.title }}" width="{{ indexImage.getWidth('pageImage') }}" height="{{ indexImage.getHeight('pageImage') }}" class="h-[50vh] min-h-80 w-full object-cover" fetchpriority="high">
-            <div class="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/70 to-transparent">
-                <div class="mx-auto max-w-[1400px] px-6 pb-8 lg:px-10 lg:pb-12">
-                    <h1 class="text-5xl font-black tracking-[-0.05em] text-white uppercase sm:text-7xl">{{ entry.title }}</h1>
-                </div>
-            </div>
-        </figure>
-    {% endif %}
+    {% include '_partials/_index-hero.twig' with { entry: entry, indexImage: indexImage } only %}
 
     <section class="mx-auto max-w-[1400px] px-6 pt-16 pb-12 lg:px-10 lg:pt-24 lg:pb-16">
-        <p class="text-sm font-bold tracking-[0.2em] uppercase">Where we work</p>
-        {% if not indexImage %}
-            <h1 class="mt-4 text-5xl font-black tracking-[-0.05em] uppercase sm:text-7xl">{{ entry.title }}</h1>
-        {% endif %}
-        {% include '_partials/_page-content.twig' with { entry: entry, heroImage: indexImage, prose: true } only %}
+        {% include '_partials/_page-content.twig' with { entry: entry, heroImage: true } only %}
     </section>
 
     {% include 'search/_form.twig' %}
@@ -44,19 +32,29 @@
         </div>
     </section>
 
-    <section class="mx-auto max-w-[1400px] px-6 py-16 lg:px-10 lg:py-24" aria-label="Markets">
-        <div class="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-            {% for market in markets %}
-                {% set cardImage = market.pageImage.kind('image').one() %}
-                {% set cardImageUrl = cardImage ? cardImage.getUrl('pageImage') %}
-                <a href="{{ market.url }}" class="group flex min-h-48 flex-col justify-between border-2 border-zinc-950 bg-cover bg-center rounded-xl p-6 transition hover:-translate-y-0.5 hover:shadow-[4px_4px_0_0_#18181b] {{ cardImage ? 'text-white' : 'bg-yellow-200' }}"{% if cardImage %} style="background-image: linear-gradient(rgb(0 0 0 / 65%), rgb(0 0 0 / 65%)), url('{{ cardImageUrl }}')"{% endif %}>
-                    <h2 class="text-3xl font-black tracking-[-0.04em] uppercase">{{ market.title }}</h2>
-                    {% if market.bodyText %}
-                        <p class="mt-4 line-clamp-3 leading-relaxed">{{ market.bodyText|striptags|truncate(140) }}</p>
-                    {% endif %}
-                    <span class="mt-8 font-bold">View market <span aria-hidden="true">→</span></span>
-                </a>
-            {% endfor %}
+    <section class="mx-auto max-w-[1400px] px-6 py-16 lg:px-10 lg:py-24" aria-label="Markets"{% if marketFilterEnabled %} x-data="{ filter: '' }"{% endif %}>
+        <div class="grid {{ marketFilterEnabled ? 'gap-8 lg:grid-cols-[14rem_1fr] lg:gap-10' }}">
+            {% if marketFilterEnabled %}
+                <div>
+                    <label for="market-filter" class="text-sm font-bold tracking-[0.2em] uppercase">Filter markets</label>
+                    <input id="market-filter" type="search" x-model.debounce.150ms="filter" placeholder="Enter a market name" class="mt-3 w-full rounded-md border-2 border-zinc-950 bg-white px-4 py-3 placeholder:text-zinc-500 focus:ring-4 focus:ring-sky-600/30 focus:outline-none">
+                    <button type="button" x-show="filter" @click="filter = ''" class="mt-3 text-sm font-bold underline underline-offset-4">Clear filter</button>
+                </div>
+            {% endif %}
+
+            <div class="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+                {% for market in markets %}
+                    {% set cardImage = market.pageImage.kind('image').one() %}
+                    {% set cardImageUrl = cardImage ? cardImage.getUrl('pageImage') %}
+                    <a href="{{ market.url }}"{% if marketFilterEnabled %} data-market="{{ market.title|lower }}" x-show="$el.dataset.market.includes(filter.toLowerCase())"{% endif %} class="group flex min-h-48 flex-col justify-between border-2 border-zinc-950 bg-cover bg-center rounded-xl p-6 transition hover:-translate-y-0.5 hover:shadow-[4px_4px_0_0_#18181b] {{ cardImage ? 'text-white' : 'bg-yellow-200' }}"{% if cardImage %} style="background-image: linear-gradient(rgb(0 0 0 / 65%), rgb(0 0 0 / 65%)), url('{{ cardImageUrl }}')"{% endif %}>
+                        <h2 class="text-3xl font-black tracking-[-0.04em] uppercase">{{ market.title }}</h2>
+                        {% if market.bodyText %}
+                            <p class="mt-4 line-clamp-3 leading-relaxed">{{ market.bodyText|striptags|truncate(140) }}</p>
+                        {% endif %}
+                        <span class="mt-8 font-bold">View market <span aria-hidden="true">→</span></span>
+                    </a>
+                {% endfor %}
+            </div>
         </div>
     </section>
 {% endblock %}
