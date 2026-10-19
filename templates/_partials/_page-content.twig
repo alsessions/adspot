@@ -6,7 +6,7 @@
     {% switch block.type.handle %}
         {% case 'bodyTextBlock' %}
             {% if block.bodyText %}
-                <div class="{{ spacing }} prose prose-xl prose-zinc flow-root max-w-none">{{ block.bodyText }}</div>
+                <div class="{{ spacing }} prose prose-xl prose-zinc flow-root max-w-none md:prose-2xl">{{ block.bodyText }}</div>
             {% endif %}
 
         {% case 'bodyImage' %}

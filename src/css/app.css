@@ -38,11 +38,11 @@
 
   @media (width >= 40rem) {
     .prose figure.image-style-align-left {
-      @apply float-left clear-none mr-8 mb-6 ml-0;
+      @apply float-left clear-none mt-0 mr-8 mb-2 ml-0 pt-6;
     }
 
     .prose figure.image-style-align-right {
-      @apply float-right clear-none mr-0 mb-6 ml-8;
+      @apply float-right clear-none mt-0 mr-0 mb-2 ml-8 pt-6;
     }
 
     .prose figure.image-style-align-left:not(.image_resized),
