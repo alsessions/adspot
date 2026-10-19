@@ -4,11 +4,19 @@
 {% block description %}Contact AdSpot about billboard advertising across New York State.{% endblock %}
 
 {% block content %}
-    {% include '_partials/_entry-content.twig' with { entry: entry, heroImage: entry.indexImage.kind('image').one() } only %}
+    {% set indexImage = entry.indexImage.kind('image').one() %}
 
-    <section class="mx-auto max-w-[1400px] px-6 pb-16 lg:px-10 lg:pb-24">
-        <div class="max-w-3xl">
-            {% include '_partials/_contact-form.twig' %}
+    {% include '_partials/_index-hero.twig' with { entry: entry, indexImage: indexImage } only %}
+
+    <section class="mx-auto max-w-[1400px] px-6 py-16 lg:px-10 lg:py-24">
+        <div class="grid items-start gap-12 lg:grid-cols-2 lg:gap-16">
+            <div>
+                {% include '_partials/_page-content.twig' with { entry: entry, heroImage: true } only %}
+            </div>
+
+            <div>
+                {% include '_partials/_contact-form.twig' %}
+            </div>
         </div>
     </section>
 {% endblock %}
