@@ -1,16 +1,17 @@
 {% set searchQuery = searchQuery ?? '' %}
+{% set embedded = embedded ?? false %}
 
-<section class="bg-[#fce604] text-zinc-950" aria-labelledby="market-search-heading">
-    <div class="mx-auto max-w-[1400px] px-6 py-8 lg:px-10">
+<section class="{{ embedded ? 'h-full rounded-xl ' }}bg-[#fce604] text-zinc-950" aria-labelledby="market-search-heading">
+    <div class="{{ embedded ? 'p-6 lg:p-8' : 'mx-auto max-w-[1400px] px-6 py-8 lg:px-10' }}">
         <h2 id="market-search-heading" class="flex items-center gap-3 text-lg font-bold tracking-wide uppercase">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="size-6 text-sky-400" aria-hidden="true">
                 <circle cx="11" cy="11" r="7"></circle>
                 <path d="m20 20-4-4"></path>
             </svg>
-            Search venues
+            Search Markets
         </h2>
 
-        <form action="{{ siteUrl('search') }}" method="get" class="mt-5 flex flex-col gap-3 sm:flex-row">
+        <form action="{{ siteUrl('search') }}" method="get" class="mt-5 flex flex-col gap-3 {{ embedded ? '' : 'sm:flex-row' }}">
             <label for="market-search" class="sr-only">Search markets</label>
             <input id="market-search" type="search" name="q" value="{{ searchQuery }}" placeholder="Enter city, state, ZIP, or address" required class="min-h-14 flex-1 rounded-sm border border-zinc-950/30 bg-white px-4 text-base text-zinc-950 outline-none placeholder:text-zinc-500 focus:border-sky-600 focus:ring-2 focus:ring-sky-600/30">
             <button type="submit" class="inline-flex min-h-14 items-center justify-center gap-2 rounded-sm bg-zinc-950 px-7 font-bold tracking-wide text-yellow-300 uppercase transition hover:bg-zinc-800 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-zinc-950">

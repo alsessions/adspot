@@ -18,17 +18,19 @@
         {% include '_partials/_page-content.twig' with { entry: entry, heroImage: true } only %}
     </section>
 
-    {% include 'search/_form.twig' %}
-
     <section class="mx-auto max-w-[1400px] px-6 lg:px-10" aria-labelledby="markets-map-heading">
         <h2 id="markets-map-heading" class="sr-only">Market locations</h2>
-        <div class="w-full [&_.gm-map]:h-[50svh] [&_.gm-map]:min-h-96 [&_.gm-map]:w-full [&_.gm-style-iw-c]:!bg-zinc-950 [&_.gm-style-iw-chr]:!h-8 [&_.gm-style-iw-tc::after]:!bg-zinc-950 [&_.gm-ui-hover-effect]:!top-0 [&_.gm-ui-hover-effect]:!right-0 [&_.gm-ui-hover-effect]:!size-8 [&_.gm-ui-hover-effect>span]:!m-2 [&_.gm-ui-hover-effect>span]:!size-4 [&_.gm-ui-hover-effect>span]:!bg-white lg:[&_.gm-map]:h-[70svh]" role="region" aria-label="Map showing all market locations">
-            {{ googleMaps.map(markets, {
-                id: 'markets-map',
-                field: 'address',
-                cluster: true,
-                infoWindowTemplate: '_partials/_market-map-info'
-            }).tag() }}
+        <div class="grid gap-6 lg:grid-cols-[3fr_8fr]">
+            {% include 'search/_form.twig' with { embedded: true } %}
+
+            <div class="w-full overflow-hidden rounded-xl [&_.gm-map]:h-[50svh] [&_.gm-map]:min-h-96 [&_.gm-map]:w-full [&_.gm-style-iw-c]:!bg-zinc-950 [&_.gm-style-iw-chr]:!h-8 [&_.gm-style-iw-tc::after]:!bg-zinc-950 [&_.gm-ui-hover-effect]:!top-0 [&_.gm-ui-hover-effect]:!right-0 [&_.gm-ui-hover-effect]:!size-8 [&_.gm-ui-hover-effect>span]:!m-2 [&_.gm-ui-hover-effect>span]:!size-4 [&_.gm-ui-hover-effect>span]:!bg-white lg:[&_.gm-map]:h-[70svh]" role="region" aria-label="Map showing all market locations">
+                {{ googleMaps.map(markets, {
+                    id: 'markets-map',
+                    field: 'address',
+                    cluster: true,
+                    infoWindowTemplate: '_partials/_market-map-info'
+                }).tag() }}
+            </div>
         </div>
     </section>
 
@@ -51,19 +53,7 @@
                 </div>
             {% endif %}
 
-            <div class="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-                {% for market in markets %}
-                    {% set cardImage = market.pageImage.kind('image').one() %}
-                    {% set cardImageUrl = cardImage ? cardImage.getUrl('pageImage') %}
-                    <a href="{{ market.url }}"{% if marketFilterEnabled %} data-market="{{ market.title|lower }}" x-show="$el.dataset.market.includes(filter.toLowerCase())"{% endif %} class="group flex min-h-48 flex-col justify-between border-2 border-zinc-950 bg-cover bg-center rounded-xl p-6 transition hover:-translate-y-0.5 hover:shadow-[4px_4px_0_0_#18181b] {{ cardImage ? 'text-white' : 'bg-yellow-200' }}"{% if cardImage %} style="background-image: linear-gradient(rgb(0 0 0 / 65%), rgb(0 0 0 / 65%)), url('{{ cardImageUrl }}')"{% endif %}>
-                        <h2 class="text-3xl font-black tracking-[-0.04em] uppercase">{{ market.title }}</h2>
-                        {% if market.bodyText %}
-                            <p class="mt-4 line-clamp-3 leading-relaxed">{{ market.bodyText|striptags|truncate(140) }}</p>
-                        {% endif %}
-                        <span class="mt-8 font-bold">View market <span aria-hidden="true">→</span></span>
-                    </a>
-                {% endfor %}
-            </div>
+          
         </div>
     </section>
 {% endblock %}
