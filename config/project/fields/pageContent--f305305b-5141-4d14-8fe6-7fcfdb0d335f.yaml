@@ -23,6 +23,11 @@ settings:
         -
           - uid
           - 26e7d437-2f89-46d4-ab52-13599ec1713e # Simple Grid
+    -
+      __assoc__:
+        -
+          - uid
+          - 2b7e6c5b-eafe-4ba6-bd22-80115512c26c # Full Width CTA
   includeTableView: false
   maxEntries: null
   minEntries: null

@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "690c642a9e845e87c4608c4b31f46760",
+    "content-hash": "9e9b640201dca1f4933b6d5e5aa42796",
     "packages": [
         {
             "name": "bacon/bacon-qr-code",
@@ -4968,6 +4968,73 @@
                 "source": "https://github.com/Seldaek/cli-prompt/tree/1.0.4"
             },
             "time": "2020-12-15T21:32:01+00:00"
+        },
+        {
+            "name": "spicyweb/craft-batch-actions",
+            "version": "2.1.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/spicywebau/craft-batch-actions.git",
+                "reference": "2d49e8353486bb12bf4406c103996235eea64296"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/spicywebau/craft-batch-actions/zipball/2d49e8353486bb12bf4406c103996235eea64296",
+                "reference": "2d49e8353486bb12bf4406c103996235eea64296",
+                "shasum": ""
+            },
+            "require": {
+                "craftcms/cms": "^5.0.0-beta.2",
+                "php": "^8.2"
+            },
+            "require-dev": {
+                "craftcms/ecs": "dev-main",
+                "craftcms/rector": "dev-main"
+            },
+            "suggest": {
+                "spicyweb/craft-neo": "Supports Neo 3.3.4 or later; copying/pasting support requires Neo 3.4.0 or later.",
+                "verbb/smith": "Required for copying/pasting Matrix blocks."
+            },
+            "type": "craft-plugin",
+            "extra": {
+                "name": "Batch Actions",
+                "class": "spicyweb\\batchactions\\Plugin",
+                "handle": "batch-actions",
+                "downloadUrl": "https://github.com/spicywebau/craft-batch-actions/archive/refs/tags/2.1.0.zip",
+                "changelogUrl": "https://github.com/spicywebau/craft-batch-actions/blob/2.x/CHANGELOG.md"
+            },
+            "autoload": {
+                "psr-4": {
+                    "spicyweb\\batchactions\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Spicy Web",
+                    "email": "plugins@spicyweb.com.au",
+                    "homepage": "https://spicyweb.com.au/"
+                }
+            ],
+            "description": "A Craft CMS plugin for performing batch actions on Matrix and Neo blocks",
+            "keywords": [
+                "Neo",
+                "cms",
+                "craftcms",
+                "field",
+                "matrix",
+                "plugin"
+            ],
+            "support": {
+                "docs": "https://github.com/spicywebau/craft-batch-actions/blob/2.1.0/README.md",
+                "issues": "https://github.com/spicywebau/craft-batch-actions/issues",
+                "rss": "https://github.com/spicywebau/craft-batch-actions/commits/2.x.atom",
+                "source": "https://github.com/spicywebau/craft-batch-actions"
+            },
+            "time": "2025-04-09T06:42:54+00:00"
         },
         {
             "name": "spomky-labs/cbor-php",

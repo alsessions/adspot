@@ -7,6 +7,7 @@
     "craftcms/contact-form": "^3.1.0",
     "doublesecretagency/craft-googlemaps": "^5.2.3",
     "mediakreativ/craft-blocksmith": "^1.7.9",
+    "spicyweb/craft-batch-actions": "^2.1.0",
     "verbb/expanded-singles": "^3.0.5",
     "vlucas/phpdotenv": "^5.4.0"
   },

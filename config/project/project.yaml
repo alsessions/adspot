@@ -1,4 +1,4 @@
-dateModified: 1792424093
+dateModified: 1792429244
 email:
   fromEmail: admin@adspot.test
   fromName: adspot
@@ -17,6 +17,8 @@ meta:
     1aa27084-e5b3-4cb6-8115-d05f4bdb10ca: 'Secondary CTA' # Secondary CTA
     1bbf2698-253c-4804-88a0-447e698c608c: 'Venues Index' # Venues Index
     1bf351c9-0ceb-4394-bd5b-ab17d133083f: Blog # Blog
+    1d8ebf2b-6886-4fde-b226-f264260c7f6b: 'Inline Large' # Inline Large
+    2b7e6c5b-eafe-4ba6-bd22-80115512c26c: 'Full Width CTA' # Full Width CTA
     2d706e51-2d3a-421d-b267-9e9e8913b8c4: 'Body Text' # Body Text
     4d51049d-7ebc-4158-9ca5-4ca8dfad73a8: 'How It Works Step' # How It Works Step
     6e72687a-a30e-46cb-bd37-c39eece0b6d4: 'Body Copy' # Body Copy
@@ -28,9 +30,11 @@ meta:
     11d3fb00-ef3f-470e-82ab-acea38737b4d: 'Page Images' # Page Images
     26e7d437-2f89-46d4-ab52-13599ec1713e: 'Simple Grid' # Simple Grid
     40bcc602-c1e4-4df5-9a5b-b88638466b68: 'Feature Card' # Feature Card
+    40ddcb9a-7b68-4b5b-bf8a-7ea4e226b84e: 'Inline Small' # Inline Small
     43f4f99f-df7a-4b4b-9b73-6631202cb847: 'Index Image' # Index Image
     45c9bc75-0732-482e-8a28-49b55e6efc6e: 'Advertisers Index' # Advertisers Index
     47deb233-c89a-4051-82c3-305e3f38400b: Markets # Markets
+    192dbd59-b1e3-4c13-92aa-d53963834a1f: 'Inline Medium' # Inline Medium
     532fdf8b-86b3-40c0-b1a8-1691f2e70042: adspot # adspot
     642b551f-79c0-4ce6-afac-2db5a3f2761a: 'Page Image' # Page Image
     878f0e81-00e1-467a-91e0-ca1d69ac94f6: 'Body Image' # Body Image
@@ -62,6 +66,10 @@ meta:
     f4366037-2a73-4bd6-a82c-2071d6f445a4: 'Blog Index' # Blog Index
     fc16afd7-8e46-4891-bb19-8bde45c06fe9: 'Heading Accent' # Heading Accent
 plugins:
+  batch-actions:
+    edition: standard
+    enabled: true
+    schemaVersion: 1.0.0
   blocksmith:
     edition: lite
     enabled: true

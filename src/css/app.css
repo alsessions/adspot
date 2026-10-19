@@ -2,3 +2,52 @@
 @plugin "@tailwindcss/typography";
 
 @source "../../templates";
+
+@layer components {
+  .prose figure.image {
+    @apply mx-auto max-w-full;
+  }
+
+  .prose figure.image.image_resized {
+    @apply block box-border;
+  }
+
+  .prose figure.image img {
+    @apply m-0 h-auto w-full;
+  }
+
+  .prose figure.image figcaption {
+    @apply block;
+  }
+
+  .prose figure.image-style-block-align-left {
+    @apply mr-auto ml-0;
+  }
+
+  .prose figure.image-style-block-align-right {
+    @apply mr-0 ml-auto;
+  }
+
+  @media (width < 40rem) {
+    .prose figure.image-style-align-left,
+    .prose figure.image-style-align-right {
+      @apply mx-auto float-none max-w-full;
+      width: 100% !important;
+    }
+  }
+
+  @media (width >= 40rem) {
+    .prose figure.image-style-align-left {
+      @apply float-left clear-none mr-8 mb-6 ml-0;
+    }
+
+    .prose figure.image-style-align-right {
+      @apply float-right clear-none mr-0 mb-6 ml-8;
+    }
+
+    .prose figure.image-style-align-left:not(.image_resized),
+    .prose figure.image-style-align-right:not(.image_resized) {
+      @apply w-1/2;
+    }
+  }
+}

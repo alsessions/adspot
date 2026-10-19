@@ -5,12 +5,15 @@ name: 'Body Text'
 searchable: false
 settings:
   advancedLinkFields: null
-  availableTransforms: ''
+  availableTransforms:
+    - 40ddcb9a-7b68-4b5b-bf8a-7ea4e226b84e # Inline Small
+    - 192dbd59-b1e3-4c13-92aa-d53963834a1f # Inline Medium
+    - 1d8ebf2b-6886-4fde-b226-f264260c7f6b # Inline Large
   availableVolumes: '*'
   characterLimit: null
   css: null
   cssFile: null
-  defaultTransform: null
+  defaultTransform: 1d8ebf2b-6886-4fde-b226-f264260c7f6b # Inline Large
   defaultUploadLocationSubpath: null
   defaultUploadLocationVolume: null
   entryTypes:
@@ -33,7 +36,7 @@ settings:
   imageEntryTypeUid: 878f0e81-00e1-467a-91e0-ca1d69ac94f6 # Body Image
   imageFieldUid: 6f7bedc3-f995-43e1-818a-e92c7157c27a
   imageMode: img
-  js: null
+  js: "return {\n  extraPlugins: [ImageResize],\n  image: {\n    resizeUnit: '%',\n    resizeOptions: [\n      { name: 'resizeImage:original', label: 'Original', value: null },\n      { name: 'resizeImage:25', label: '25%', value: '25' },\n      { name: 'resizeImage:50', label: '50%', value: '50' },\n      { name: 'resizeImage:75', label: '75%', value: '75' },\n    ],\n    styles: {\n      options: ['alignLeft', 'alignRight', 'alignBlockLeft', 'block', 'alignBlockRight'],\n    },\n    toolbar: [\n      'transformImage',\n      '|',\n      'imageStyle:wrapText',\n      'imageStyle:breakText',\n      '|',\n      'resizeImage',\n      '|',\n      'toggleImageCaption',\n      'imageTextAlternative',\n      '|',\n      'imageEditor',\n    ],\n  },\n};"
   jsFile: null
   options: null
   parseEmbeds: false
