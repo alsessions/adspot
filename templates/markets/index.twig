@@ -22,7 +22,7 @@
 
     <section class="mx-auto max-w-[1400px] px-6 lg:px-10" aria-labelledby="markets-map-heading">
         <h2 id="markets-map-heading" class="sr-only">Market locations</h2>
-        <div class="w-full [&_.gm-map]:h-[50svh] [&_.gm-map]:min-h-96 [&_.gm-map]:w-full lg:[&_.gm-map]:h-[70svh]" role="region" aria-label="Map showing all market locations">
+        <div class="w-full [&_.gm-map]:h-[50svh] [&_.gm-map]:min-h-96 [&_.gm-map]:w-full [&_.gm-style-iw-c]:!bg-zinc-950 [&_.gm-style-iw-chr]:!h-8 [&_.gm-style-iw-tc::after]:!bg-zinc-950 [&_.gm-ui-hover-effect]:!top-0 [&_.gm-ui-hover-effect]:!right-0 [&_.gm-ui-hover-effect]:!size-8 [&_.gm-ui-hover-effect>span]:!m-2 [&_.gm-ui-hover-effect>span]:!size-4 [&_.gm-ui-hover-effect>span]:!bg-white lg:[&_.gm-map]:h-[70svh]" role="region" aria-label="Map showing all market locations">
             {{ googleMaps.map(markets, {
                 id: 'markets-map',
                 field: 'address',
@@ -31,6 +31,15 @@
             }).tag() }}
         </div>
     </section>
+
+    <script>
+        addEventListener('load', () => {
+            setTimeout(() => {
+                const map = googleMaps.getMap('markets-map')
+                google.maps.event.addListener(map._map, 'click', () => map.closeInfoWindow('*'))
+            })
+        })
+    </script>
 
     <section class="mx-auto max-w-[1400px] px-6 py-16 lg:px-10 lg:py-24" aria-label="Markets"{% if marketFilterEnabled %} x-data="{ filter: '' }"{% endif %}>
         <div class="grid {{ marketFilterEnabled ? 'gap-8 lg:grid-cols-[14rem_1fr] lg:gap-10' }}">

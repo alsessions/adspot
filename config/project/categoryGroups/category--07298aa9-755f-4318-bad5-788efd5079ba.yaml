@@ -1,0 +1,67 @@
+defaultPlacement: end
+fieldLayouts:
+  ee72c05b-4bba-48d5-a554-a6eea5b6e21d:
+    cardThumbAlignment: end
+    tabs:
+      -
+        elementCondition: null
+        elements:
+          -
+            autocapitalize: true
+            autocomplete: false
+            autocorrect: true
+            class: null
+            dateAdded: '2026-10-19T15:31:17+00:00'
+            disabled: false
+            elementCondition: null
+            id: null
+            inputType: null
+            instructions: null
+            label: null
+            max: null
+            min: null
+            name: null
+            orientation: null
+            placeholder: null
+            readonly: false
+            requirable: false
+            size: null
+            step: null
+            tip: null
+            title: null
+            type: craft\fieldlayoutelements\TitleField
+            uid: 44e7e54a-39d2-4409-968a-5b9a51e0aaf1
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            dateAdded: '2026-10-19T15:34:51+00:00'
+            editCondition: null
+            elementCondition: null
+            elementEditCondition: null
+            fieldUid: be2e95dd-445d-43cc-8ccc-c85be42f787e # Type
+            handle: null
+            instructions: null
+            label: null
+            oldFieldUid: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: df6c6d69-beb7-41ca-88cd-409e12b66b51
+            userCondition: null
+            warning: null
+            width: 100
+        name: Content
+        uid: 7600254c-a4bc-4af4-9af8-0715da9019e3
+        userCondition: null
+    thumbFieldKey: null
+handle: category
+name: Category
+siteSettings:
+  4697f176-6bfa-4a98-85e5-a7b83e25d7bc: # adspot
+    hasUrls: true
+    template: category/_category.twig
+    uriFormat: 'category/{slug}'
+structure:
+  maxLevels: null
+  uid: 6652d6b0-d0bd-4bd3-9114-415bc09cdea7

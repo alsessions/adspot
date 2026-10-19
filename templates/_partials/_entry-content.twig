@@ -24,7 +24,7 @@
         {% endif %}
     {% endif %}
 
-    {% if entry.type.handle == 'page' %}
+    {% if entry.getType().handle == 'page' %}
         {% include '_partials/_page-content.twig' with { entry: entry, heroImage: heroImage } only %}
     {% elseif entry.bodyText %}
         <div class="{{ heroImage ? '' : 'mt-8' }} prose prose-xl prose-zinc max-w-4xl">{{ entry.bodyText }}</div>

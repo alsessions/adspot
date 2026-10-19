@@ -1,4 +1,4 @@
-dateModified: 1792099419
+dateModified: 1792424093
 email:
   fromEmail: admin@adspot.test
   fromName: adspot
@@ -39,6 +39,7 @@ meta:
     2010cd22-21b0-467b-9aae-27a6e8b72469: 'Primary CTA URL' # Primary CTA URL
     4697f176-6bfa-4a98-85e5-a7b83e25d7bc: adspot # adspot
     6461c86f-2160-4600-8e53-931f62b2140e: Address # Address
+    07298aa9-755f-4318-bad5-788efd5079ba: Category # Category
     7602b626-c80f-4151-9c0b-acf9f14482ca: Grid # Grid
     7933b506-bd38-4166-9403-d5c1410702bb: 'Secondary Eyebrow' # Secondary Eyebrow
     034784a2-4fdc-4480-9ba0-80e4ae462b8f: 'Contact Form' # Contact Form
@@ -51,6 +52,7 @@ meta:
     ae42f0ac-b0aa-47e7-9c71-cc48dd052594: 'Basic Page' # Basic Page
     b0f0711a-19da-4978-aa0d-b35e95cc0975: 'Body Text' # Body Text
     b3e00c20-78de-4496-853f-f4ca67a063b7: Link # Link
+    be2e95dd-445d-43cc-8ccc-c85be42f787e: Type # Type
     c872b290-9313-4f28-acd2-925457a79e5d: 'Markets Index' # Markets Index
     db8196f1-344f-4ba0-86ab-bd52b54b7900: 'Home Page' # Home Page
     e19d1e17-c887-42cd-9b66-14558456cc62: Eyebrow # Eyebrow
