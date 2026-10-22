@@ -10,7 +10,7 @@
         .type('market')
         .orderBy('title asc')
         .all() %}
-    {% set marketFilterEnabled = false %} {# Set to true to restore the market filter. #}
+    {% set marketTypeOptions = craft.app.fields.getFieldByHandle('type').options %}
 
     {% include '_partials/_index-hero.twig' with { entry: entry, indexImage: indexImage } only %}
 
@@ -20,8 +20,23 @@
 
     <section class="mx-auto max-w-[1400px] px-6 lg:px-10" aria-labelledby="markets-map-heading">
         <h2 id="markets-map-heading" class="sr-only">Market locations</h2>
-        <div class="space-y-6">
+        <div class="space-y-4">
             {% include 'search/_form.twig' with { embedded: true } %}
+
+            <fieldset class="rounded-xl bg-[#fce604] px-6 py-4 text-zinc-950 lg:px-8">
+                <legend class="sr-only">Filter by category</legend>
+                <div class="flex flex-col gap-3 sm:flex-row sm:items-center sm:gap-8">
+                    <span class="shrink-0 text-sm font-bold tracking-wide uppercase" aria-hidden="true">Filter by category</span>
+                    <div class="flex flex-wrap gap-x-7 gap-y-2">
+                        {% for option in marketTypeOptions %}
+                            <label class="inline-flex cursor-pointer items-center gap-2 font-bold">
+                                <input type="checkbox" value="{{ option.value }}" aria-controls="markets-map" data-market-category-filter class="size-5 accent-zinc-950">
+                                <span>{{ option.label }}</span>
+                            </label>
+                        {% endfor %}
+                    </div>
+                </div>
+            </fieldset>
 
             <div class="w-full overflow-hidden rounded-xl [&_.gm-map]:h-[50svh] [&_.gm-map]:min-h-96 [&_.gm-map]:w-full [&_.gm-style-iw-c]:!bg-zinc-950 [&_.gm-style-iw-c]:!p-0 [&_.gm-style-iw-chr]:!h-8 [&_.gm-style-iw-chr]:!bg-zinc-950 [&_.gm-style-iw-d]:!overflow-hidden [&_.gm-style-iw-d]:!bg-zinc-950 [&_.gm-style-iw-tc::after]:!bg-zinc-950 [&_.gm-ui-hover-effect]:!top-0 [&_.gm-ui-hover-effect]:!right-0 [&_.gm-ui-hover-effect]:!size-8 [&_.gm-ui-hover-effect>span]:!m-2 [&_.gm-ui-hover-effect>span]:!size-4 [&_.gm-ui-hover-effect>span]:!bg-white lg:[&_.gm-map]:h-[70svh]" role="region" aria-label="Map showing all market locations">
                 {{ googleMaps.map(markets, {
@@ -38,22 +53,36 @@
         addEventListener('load', () => {
             setTimeout(() => {
                 const map = googleMaps.getMap('markets-map')
+                const marketCategories = {
+                    {% for market in markets %}
+                        {% set categories = [] %}
+                        {% for category in market.type %}
+                            {% set categories = categories|merge([category.value]) %}
+                        {% endfor %}
+                        '{{ market.id }}-address': {{ categories|json_encode|raw }}{{ not loop.last ? ',' }}
+                    {% endfor %}
+                }
+                const categoryFilters = [...document.querySelectorAll('[data-market-category-filter]')]
+
                 google.maps.event.addListener(map._map, 'click', () => map.closeInfoWindow('*'))
+
+                categoryFilters.forEach(filter => filter.addEventListener('change', () => {
+                    const selectedCategories = categoryFilters
+                        .filter(filter => filter.checked)
+                        .map(filter => filter.value)
+                    const visibleMarkers = Object.entries(marketCategories)
+                        .filter(([, categories]) => !selectedCategories.length || selectedCategories.some(category => categories.includes(category)))
+                        .map(([markerId]) => markerId)
+
+                    map.closeInfoWindow('*')
+                    map.hideMarker('*')
+                    map.showMarker(visibleMarkers)
+
+                    if (visibleMarkers.length) {
+                        map.fit()
+                    }
+                }))
             })
         })
     </script>
-
-    <section class="mx-auto max-w-[1400px] px-6 py-16 lg:px-10 lg:py-24" aria-label="Markets"{% if marketFilterEnabled %} x-data="{ filter: '' }"{% endif %}>
-        <div class="grid {{ marketFilterEnabled ? 'gap-8 lg:grid-cols-[14rem_1fr] lg:gap-10' }}">
-            {% if marketFilterEnabled %}
-                <div>
-                    <label for="market-filter" class="text-sm font-bold tracking-[0.2em] uppercase">Filter markets</label>
-                    <input id="market-filter" type="search" x-model.debounce.150ms="filter" placeholder="Enter a market name" class="mt-3 w-full rounded-md border-2 border-zinc-950 bg-white px-4 py-3 placeholder:text-zinc-500 focus:ring-4 focus:ring-sky-600/30 focus:outline-none">
-                    <button type="button" x-show="filter" @click="filter = ''" class="mt-3 text-sm font-bold underline underline-offset-4">Clear filter</button>
-                </div>
-            {% endif %}
-
-          
-        </div>
-    </section>
 {% endblock %}
