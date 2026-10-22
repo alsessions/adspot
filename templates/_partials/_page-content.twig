@@ -12,7 +12,7 @@
         {% case 'bodyImage' %}
             {% set image = block.pageImages.kind('image').one() %}
             {% if image %}
-                <figure class="{{ spacing }} max-w-5xl overflow-hidden rounded-xl">
+                <figure class="{{ spacing }} max-w-5xl overflow-hidden rounded-lg">
                     <img src="{{ image.getUrl('pageImage') }}" alt="{{ image.alt ?: entry.title }}" width="{{ image.getWidth('pageImage') }}" height="{{ image.getHeight('pageImage') }}" class="h-auto w-full object-cover" loading="lazy">
                 </figure>
             {% endif %}
@@ -21,7 +21,7 @@
             {% set image = block.pageImages.kind('image').one() %}
             {% if image and block.bodyText %}
                 <section class="{{ spacing }} grid grid-cols-[minmax(0,1fr)_minmax(0,3fr)] items-start gap-6 sm:gap-10">
-                    <img src="{{ image.getUrl('inlineMedium') }}" alt="{{ image.alt ?: entry.title }}" width="{{ image.getWidth('inlineMedium') }}" height="{{ image.getHeight('inlineMedium') }}" class="h-auto w-full" loading="lazy">
+                    <img src="{{ image.getUrl('inlineMedium') }}" alt="{{ image.alt ?: entry.title }}" width="{{ image.getWidth('inlineMedium') }}" height="{{ image.getHeight('inlineMedium') }}" class="h-auto w-full rounded-lg" loading="lazy">
                     <div class="prose prose-xl prose-zinc max-w-none md:prose-2xl">{{ block.bodyText }}</div>
                 </section>
             {% endif %}
