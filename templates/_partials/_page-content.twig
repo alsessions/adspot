@@ -13,7 +13,7 @@
             {% set image = block.pageImages.kind('image').one() %}
             {% if image %}
                 <figure class="{{ spacing }} max-w-5xl overflow-hidden rounded-lg">
-                    <img src="{{ image.getUrl('pageImage') }}" alt="{{ image.alt ?: entry.title }}" width="{{ image.getWidth('pageImage') }}" height="{{ image.getHeight('pageImage') }}" class="h-auto w-full object-cover" loading="lazy">
+                    <img src="{{ image.getUrl('pageImage') }}" alt="{{ image.alt ?: entry.title }}" width="{{ image.getWidth('pageImage') }}" height="{{ image.getHeight('pageImage') }}" class="h-auto w-full rounded-lg object-cover" loading="lazy">
                 </figure>
             {% endif %}
 
