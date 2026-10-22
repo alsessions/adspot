@@ -1,6 +1,6 @@
 {% set cardImage = entry.pageImage.kind('image').one() %}
 
-<article class="w-64 overflow-hidden rounded-xl bg-zinc-950 text-white">
+<article class="w-64 overflow-hidden  bg-zinc-950 text-white">
     {% if cardImage %}
         <img src="{{ cardImage.getUrl('pageImage') }}" alt="" class="aspect-video w-full object-cover">
     {% endif %}
