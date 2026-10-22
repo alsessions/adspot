@@ -17,6 +17,15 @@
                 </figure>
             {% endif %}
 
+        {% case 'imageTextBlock' %}
+            {% set image = block.pageImages.kind('image').one() %}
+            {% if image and block.bodyText %}
+                <section class="{{ spacing }} grid items-start gap-8 sm:grid-cols-[1fr_3fr] sm:gap-10">
+                    <img src="{{ image.getUrl('inlineMedium') }}" alt="{{ image.alt ?: entry.title }}" width="{{ image.getWidth('inlineMedium') }}" height="{{ image.getHeight('inlineMedium') }}" class="h-auto w-full" loading="lazy">
+                    <div class="prose prose-xl prose-zinc max-w-none md:prose-2xl">{{ block.bodyText }}</div>
+                </section>
+            {% endif %}
+
         {% case 'simpleGridBlock' %}
             {% include '_partials/_simple-grid.twig' with { entry: block, spacing: spacing } only %}
 

@@ -1,0 +1,62 @@
+allowLineBreaksInTitles: false
+color: null
+description: null
+fieldLayouts:
+  c9076e65-45d5-4c45-8598-ce6813148a01:
+    cardThumbAlignment: end
+    cardView:
+      - 'layoutElement:c209e5f9-884d-4623-8d39-090e434d51dc'
+    tabs:
+      -
+        elementCondition: null
+        elements:
+          -
+            dateAdded: null
+            editCondition: null
+            elementCondition: null
+            elementEditCondition: null
+            fieldUid: 11d3fb00-ef3f-470e-82ab-acea38737b4d # Page Images
+            handle: null
+            instructions: null
+            label: Image
+            oldFieldUid: null
+            required: true
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: c209e5f9-884d-4623-8d39-090e434d51dc
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            dateAdded: null
+            editCondition: null
+            elementCondition: null
+            elementEditCondition: null
+            fieldUid: b0f0711a-19da-4978-aa0d-b35e95cc0975 # Body Text
+            handle: null
+            instructions: null
+            label: Text
+            oldFieldUid: null
+            required: true
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: a84144d0-460c-4cf7-a6dc-4d5f34974b13
+            userCondition: null
+            warning: null
+            width: 100
+        name: Content
+        uid: b78bffb7-fee8-4547-9726-22436be6a979
+        userCondition: null
+    thumbFieldKey: 'field:11d3fb00-ef3f-470e-82ab-acea38737b4d' # Page Images
+handle: imageTextBlock
+hasTitleField: false
+icon: null
+name: 'Image + Text'
+showSlugField: false
+showStatusField: false
+slugTranslationKeyFormat: null
+slugTranslationMethod: site
+titleFormat: 'Image + Text'
+titleTranslationKeyFormat: null
+titleTranslationMethod: site
+uiLabelFormat: 'Image + Text'

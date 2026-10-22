@@ -22,6 +22,11 @@ settings:
       __assoc__:
         -
           - uid
+          - 7e142b41-c3aa-42b8-9861-9424a8c681cf # Image + Text
+    -
+      __assoc__:
+        -
+          - uid
           - 26e7d437-2f89-46d4-ab52-13599ec1713e # Simple Grid
     -
       __assoc__:

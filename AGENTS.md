@@ -43,9 +43,10 @@ The shared `page` entry type is used by basic pages, blog posts, Contact, and th
 
 - Body Text (`bodyTextBlock`) containing the `bodyText` CKEditor field
 - Body Image (`bodyImage`) containing the single-asset `pageImages` field
+- Image + Text (`imageTextBlock`) containing `pageImages` and `bodyText`, rendered as a responsive image/copy grid
 - Simple Grid (`simpleGridBlock`) containing the nested `simpleGrid` Matrix field
 
-Editors can arrange Body Text, Body Image, and Simple Grid blocks in any order. `simpleGrid` contains `featureCard` entries. CKEditor can also place Body Image entries inline within `bodyText`.
+Editors can arrange Page Content blocks in any order. `simpleGrid` contains `featureCard` entries. CKEditor can also place Body Image entries inline within `bodyText`; use Image + Text when copy must remain paired with an image without floats.
 
 The `market` entry type remains separate and continues to use `pageImage`, `bodyText`, `address`, and the existing Market templates. Do not move Market detail content into `pageContent`.
 

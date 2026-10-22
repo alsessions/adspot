@@ -1,4 +1,4 @@
-dateModified: 1792429244
+dateModified: 1792683211
 email:
   fromEmail: admin@adspot.test
   fromName: adspot
@@ -25,6 +25,7 @@ meta:
     6f49a969-8917-4d80-8739-5d23e549e048: 'Home Logos' # Home Logos
     6fea538f-dbb9-499f-8901-8d59d0815125: 'Home Logo' # Home Logo
     7ac39a8f-9250-4234-acfc-12fc4642e5cb: Heading # Heading
+    7e142b41-c3aa-42b8-9861-9424a8c681cf: 'Image + Text' # Image + Text
     8e23cea5-f0cd-4ab9-844b-cbeeeb122558: 'Logo Image' # Logo Image
     8f52b621-39cc-48d2-b870-890301665097: Page # Page
     11d3fb00-ef3f-470e-82ab-acea38737b4d: 'Page Images' # Page Images
