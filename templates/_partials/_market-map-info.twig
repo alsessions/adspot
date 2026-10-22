@@ -10,7 +10,7 @@
             {% if entry.type|length %}
                 <div class="flex flex-wrap gap-2">
                     {% for category in entry.type %}
-                        <span class="inline-flex rounded-full bg-gradient-to-r from-[#fce604] to-lime-300 px-3 py-1 text-xs font-black text-zinc-950 uppercase">{{ category.label }}&nbsp;-&nbsp;{{ craft.categories().group('category').type(category.value).count() }}</span>
+                        <span class="inline-flex rounded-full bg-gradient-to-r from-[#fce604] to-lime-300 px-3 py-1 text-xs font-black text-zinc-950 uppercase">{{ category.label }}&nbsp;-&nbsp;{{ marketTypeCounts[category.value] }}</span>
                     {% endfor %}
                 </div>
             {% endif %}

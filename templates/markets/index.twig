@@ -11,6 +11,18 @@
         .orderBy('title asc')
         .all() %}
     {% set marketTypeOptions = craft.app.fields.getFieldByHandle('type').options %}
+    {% set marketTypeCounts = {} %}
+    {% for option in marketTypeOptions %}
+        {% set count = 0 %}
+        {% for market in markets %}
+            {% for category in market.type %}
+                {% if category.value == option.value %}
+                    {% set count = count + 1 %}
+                {% endif %}
+            {% endfor %}
+        {% endfor %}
+        {% set marketTypeCounts = marketTypeCounts|merge({ (option.value): count }) %}
+    {% endfor %}
 
     {% include '_partials/_index-hero.twig' with { entry: entry, indexImage: indexImage } only %}
 
@@ -24,14 +36,14 @@
             {% include 'search/_form.twig' with { embedded: true } %}
 
             <fieldset class="rounded-xl bg-[#fce604] px-6 py-4 text-zinc-950 lg:px-8">
-                <legend class="sr-only">Filter by category</legend>
+                <legend class="sr-only">Filter by type</legend>
                 <div class="flex flex-col gap-3 sm:flex-row sm:items-center sm:gap-8">
                     <span class="shrink-0 text-sm font-bold tracking-wide uppercase" aria-hidden="true">Filter by category</span>
                     <div class="flex flex-wrap gap-x-7 gap-y-2">
                         {% for option in marketTypeOptions %}
                             <label class="inline-flex cursor-pointer items-center gap-2 font-bold">
                                 <input type="checkbox" value="{{ option.value }}" aria-controls="markets-map" data-market-category-filter class="size-5 accent-zinc-950">
-                                <span>{{ option.label }}</span>
+                                <span>{{ option.label }}&nbsp;({{ marketTypeCounts[option.value] }})</span>
                             </label>
                         {% endfor %}
                     </div>
@@ -43,7 +55,8 @@
                     id: 'markets-map',
                     field: 'address',
                     cluster: true,
-                    infoWindowTemplate: '_partials/_market-map-info'
+                    infoWindowTemplate: '_partials/_market-map-info',
+                    infoWindowData: { marketTypeCounts: marketTypeCounts }
                 }).tag() }}
             </div>
         </div>
