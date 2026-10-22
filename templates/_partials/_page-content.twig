@@ -6,7 +6,7 @@
     {% switch block.type.handle %}
         {% case 'bodyTextBlock' %}
             {% if block.bodyText %}
-                <div class="{{ spacing }} prose prose-xl prose-zinc flow-root max-w-none md:prose-2xl">{{ block.bodyText }}</div>
+                <div class="{{ spacing }} prose prose-lg prose-zinc flow-root max-w-none">{{ block.bodyText }}</div>
             {% endif %}
 
         {% case 'bodyImage' %}
@@ -22,7 +22,7 @@
             {% if image and block.bodyText %}
                 <section class="{{ spacing }} grid grid-cols-[minmax(0,1fr)_minmax(0,3fr)] items-start gap-6 sm:gap-10">
                     <img src="{{ image.getUrl('inlineMedium') }}" alt="{{ image.alt ?: entry.title }}" width="{{ image.getWidth('inlineMedium') }}" height="{{ image.getHeight('inlineMedium') }}" class="h-auto w-full rounded-lg" loading="lazy">
-                    <div class="prose prose-xl prose-zinc max-w-none md:prose-2xl">{{ block.bodyText }}</div>
+                    <div class="prose prose-lg prose-zinc max-w-none">{{ block.bodyText }}</div>
                 </section>
             {% endif %}
 
@@ -38,7 +38,7 @@
                         {% endif %}
                         <h2 class="{{ block.eyebrow ? 'mt-4 ' }}text-center text-4xl font-black tracking-[-0.05em] uppercase sm:text-6xl">{{ block.heading }}</h2>
                         {% if block.bodyText %}
-                            <div class="prose prose-xl prose-invert mx-auto mt-6 max-w-5xl font-semibold sm:prose-2xl">{{ block.bodyText }}</div>
+                            <div class="prose prose-lg prose-invert mx-auto mt-6 max-w-5xl font-semibold">{{ block.bodyText }}</div>
                         {% endif %}
                     </div>
                 </div>
